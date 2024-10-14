@@ -1,9 +1,11 @@
+import { NavBar } from '@/components/nav-bar'
 import { Button } from '@/components/ui/button'
 import { Download, Star } from 'lucide-react'
 
 export default function Page() {
   return (
-    <main className="flex flex-col w-full">
+    <main className="flex flex-col w-full relative">
+      <NavBar />
       <section className="flex w-full h-[900px] items-center justify-center relative">
         <div className="w-full max-w-[1080px] px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col gap-6">
@@ -15,7 +17,7 @@ export default function Page() {
             </h1>
             <div className="flex items-center gap-4">
               <div className="w-[3px] h-12 bg-gradient-to-b from-primary-green to-primary-blue rounded-full" />
-              <p className="font-bold md:text-lg">
+              <p className="md:text-lg opacity-80">
                 Meu nome é João Rocha e eu posso ajudar sua empresa a lucrar
                 mais com software.
               </p>
