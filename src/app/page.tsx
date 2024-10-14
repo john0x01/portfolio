@@ -1,5 +1,6 @@
 import { MovingSkills } from '@/components/moving-skills'
 import { NavBar } from '@/components/nav-bar'
+import { Projects } from '@/components/projects'
 import { Button } from '@/components/ui/button'
 import { Download, Star } from 'lucide-react'
 
@@ -48,6 +49,12 @@ export default function Page() {
         <div className="absolute w-[670px] h-[670px] bg-primary-green blur-[150px] opacity-15 -z-10 -top-[335px]" />
       </section>
       <MovingSkills />
+      <section className="flex flex-col gap-8 w-full items-center">
+        <div className="flex w-full max-w-7xl px-4">
+          <h1 className="text-h2">Meus Projetos</h1>
+        </div>
+        <Projects />
+      </section>
     </main>
   )
 }
