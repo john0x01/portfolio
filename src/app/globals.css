@@ -44,7 +44,7 @@
   } 
 
   .text-h1 {
-    @apply text-[2.5rem] md:text-[4.5rem] font-bold
+    @apply text-[2.5rem] md:text-[4.5rem] font-bold md:leading-[4.25rem]
   }
 
   .text-h2 {

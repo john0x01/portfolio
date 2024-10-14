@@ -10,25 +10,25 @@ export function Projects() {
   }
 
   return (
-    <Tabs defaultValue="featured" className="w-full">
-      <TabsContent value="featured">
+    <Tabs defaultValue="featured" className="w-full flex flex-col items-center">
+      <TabsContent className="w-full" value="featured">
         <Carousel
           items={getCards(
             data.filter((item) => item.tags.includes('featured')),
           )}
         />
       </TabsContent>
-      <TabsContent value="saas">
+      <TabsContent className="w-full" value="saas">
         <Carousel
           items={getCards(data.filter((item) => item.tags.includes('saas')))}
         />
       </TabsContent>
-      <TabsContent value="apps">
+      <TabsContent className="w-full" value="apps">
         <Carousel
           items={getCards(data.filter((item) => item.tags.includes('apps')))}
         />
       </TabsContent>
-      <TabsContent value="landing pages">
+      <TabsContent className="w-full" value="landing pages">
         <Carousel
           items={getCards(
             data.filter((item) => item.tags.includes('landing pages')),
@@ -37,25 +37,25 @@ export function Projects() {
       </TabsContent>
       <TabsList className="w-full max-w-7xl px-4 py-8 bg-transparent mt-10">
         <TabsTrigger
-          className="w-full rounded-full data-[state=active]:bg-[#131313]"
+          className="w-full rounded-full data-[state=active]:bg-[#131313] text-sm sm:md-base"
           value="featured"
         >
           Destaque
         </TabsTrigger>
         <TabsTrigger
-          className="w-full rounded-full data-[state=active]:bg-[#131313]"
+          className="w-full rounded-full data-[state=active]:bg-[#131313] text-sm sm:md-base"
           value="saas"
         >
           SaaS
         </TabsTrigger>
         <TabsTrigger
-          className="w-full rounded-full data-[state=active]:bg-[#131313]"
+          className="w-full rounded-full data-[state=active]:bg-[#131313] text-sm sm:md-base"
           value="apps"
         >
           Aplicativos
         </TabsTrigger>
         <TabsTrigger
-          className="w-full rounded-full data-[state=active]:bg-[#131313]"
+          className="w-full rounded-full data-[state=active]:bg-[#131313] text-sm sm:md-base"
           value="landing pages"
         >
           Landing Pages
