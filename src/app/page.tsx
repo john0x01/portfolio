@@ -2,6 +2,7 @@ import { MovingSkills } from '@/components/moving-skills'
 import { NavBar } from '@/components/nav-bar'
 import { Projects } from '@/components/projects'
 import { SkillsGrid } from '@/components/skills-grid'
+import { TechCard } from '@/components/tech-card'
 import { Button } from '@/components/ui/button'
 import { Download, Star } from 'lucide-react'
 import Image from 'next/image'
@@ -68,8 +69,7 @@ export default function Page() {
           <SkillsGrid />
           <h2 className="text-h3 mr-auto">Principais tecnologias</h2>
           <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-16 ">
-            <div className="flex flex-col gap-8 p-4 border-t">
-              <span className="text-sm opacity-60">01</span>
+            <TechCard number="01">
               <Image
                 className="mx-auto my-auto"
                 src="/techs/react.svg"
@@ -77,9 +77,8 @@ export default function Page() {
                 width={180}
                 height={80}
               />
-            </div>
-            <div className="flex flex-col gap-8 p-4 border-t">
-              <span className="text-sm opacity-60">02</span>
+            </TechCard>
+            <TechCard number="02">
               <Image
                 className="mx-auto my-auto"
                 src="/techs/nextjs.svg"
@@ -87,9 +86,8 @@ export default function Page() {
                 width={180}
                 height={80}
               />
-            </div>
-            <div className="flex flex-col gap-8 p-4 border-t">
-              <span className="text-sm opacity-60">03</span>
+            </TechCard>
+            <TechCard number="03">
               <Image
                 className="mx-auto my-auto"
                 src="/techs/nodejs.svg"
@@ -97,9 +95,8 @@ export default function Page() {
                 width={180}
                 height={80}
               />
-            </div>
-            <div className="flex flex-col gap-8 p-4 border-t">
-              <span className="text-sm opacity-60">04</span>
+            </TechCard>
+            <TechCard number="04">
               <Image
                 className="mx-auto my-auto opacity-80"
                 src="/techs/react-native.svg"
@@ -107,22 +104,52 @@ export default function Page() {
                 width={180}
                 height={80}
               />
-            </div>
-            <div className="flex flex-col gap-8 p-4 border-t">
-              <span className="text-sm opacity-60">05</span>
-            </div>
-            <div className="flex flex-col gap-8 p-4 border-t">
-              <span className="text-sm opacity-60">06</span>
-            </div>
-            <div className="flex flex-col gap-8 p-4 border-t">
-              <span className="text-sm opacity-60">07</span>
-            </div>
-            <div className="flex flex-col gap-8 p-4 border-t">
-              <span className="text-sm opacity-60">08</span>
-            </div>
-            <div className="flex flex-col gap-8 p-4 border-t">
-              <span className="text-sm opacity-60">09</span>
-            </div>
+            </TechCard>
+            <TechCard number="05">
+              <Image
+                className="mx-auto my-auto opacity-80"
+                src="/techs/typescript.svg"
+                alt="Typescript"
+                width={180}
+                height={80}
+              />
+            </TechCard>
+            <TechCard number="06">
+              <Image
+                className="mx-auto my-auto opacity-80"
+                src="/techs/mysql.svg"
+                alt="MySQL"
+                width={180}
+                height={80}
+              />
+            </TechCard>
+            <TechCard number="07">
+              <Image
+                className="mx-auto my-auto"
+                src="/techs/tailwind.svg"
+                alt="Tailwind"
+                width={180}
+                height={80}
+              />
+            </TechCard>
+            <TechCard number="08">
+              <Image
+                className="mx-auto my-auto"
+                src="/techs/nginx.svg"
+                alt="Nginx"
+                width={180}
+                height={80}
+              />
+            </TechCard>
+            <TechCard number="09">
+              <Image
+                className="mx-auto my-auto"
+                src="/techs/prisma.svg"
+                alt="Prisma"
+                width={180}
+                height={80}
+              />
+            </TechCard>
           </div>
         </div>
       </section>
