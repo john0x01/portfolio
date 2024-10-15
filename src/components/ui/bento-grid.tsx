@@ -34,7 +34,7 @@ export const BentoGridItem = ({
   return (
     <Card
       className={cn(
-        'row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-none p-4 gap-4 marker:flex flex-col min-h-fit h-full',
+        'row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-none p-4 gap-4 marker:flex flex-col',
         className,
       )}
     >
