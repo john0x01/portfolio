@@ -3,7 +3,7 @@ import {
   AnimatePresence,
   motion,
   useMotionValueEvent,
-  useScroll
+  useScroll,
 } from 'framer-motion'
 import { AlignRight } from 'lucide-react'
 import Image from 'next/image'
