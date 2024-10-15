@@ -35,7 +35,7 @@ export function Projects() {
           )}
         />
       </TabsContent>
-      <TabsList className="w-full max-w-7xl px-4 py-8 bg-transparent mt-10">
+      <TabsList className="hidden sm:flex w-full max-w-7xl px-4 py-8 bg-transparent mt-10">
         <TabsTrigger
           className="w-full rounded-full data-[state=active]:bg-[#131313] text-sm sm:md-base"
           value="featured"

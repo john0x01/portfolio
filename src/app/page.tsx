@@ -8,7 +8,7 @@ import Image from 'next/image'
 
 export default function Page() {
   return (
-    <main className="flex flex-col w-full relative">
+    <main className="flex flex-col w-full relative overflow-x-hidden">
       <NavBar />
       <section className="flex w-full h-[720px] sm:h-[900px] items-center justify-center relative">
         <div className="w-full max-w-[1080px] px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -53,13 +53,16 @@ export default function Page() {
         <div className="absolute w-[670px] h-[670px] bg-primary-green blur-[150px] opacity-15 -z-10 -top-[335px]" />
       </section>
       <MovingSkills />
-      <section className="flex flex-col gap-8 w-full items-center py-8 sm:py-16">
+      <section
+        className="flex flex-col gap-8 w-full items-center py-8 sm:py-16"
+        id="projects"
+      >
         <div className="flex w-full max-w-7xl px-4">
           <h1 className="text-h2">Meus Projetos</h1>
         </div>
         <Projects />
       </section>
-      <section className="flex w-full flex-col items-center">
+      <section className="flex w-full flex-col items-center" id="skills">
         <div className="flex w-full max-w-7xl flex-col gap-16 items-center px-4 py-8 sm:py-16">
           <h1 className="text-h2">Minhas Skills</h1>
           <SkillsGrid />

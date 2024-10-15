@@ -33,6 +33,12 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0px !important;
 }
 
 @layer base {
