@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <main className="flex flex-col w-full relative">
       <NavBar />
-      <section className="flex w-full h-[900px] items-center justify-center relative">
+      <section className="flex w-full h-[720px] sm:h-[900px] items-center justify-center relative">
         <div className="w-full max-w-[1080px] px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col gap-6">
             <h1 className="text-h1">
