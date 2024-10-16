@@ -9,6 +9,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { CareerCards } from '@/components/career-cards'
+import { ContactFormTrigger } from '@/components/contact-form'
 import { TracingBeam } from '@/components/ui/tracing-beam'
 import {
   SiGithub,
@@ -297,7 +298,9 @@ export default function Page() {
               lacinia. Aliquam in elementum tellus.
             </p>
             <div className="flex flex-col gap-4 items-center">
-              <Button>🔥 Quero te contratar agora</Button>
+              <ContactFormTrigger>
+                <Button>🔥 Quero te contratar agora</Button>
+              </ContactFormTrigger>
             </div>
           </div>
         </div>
