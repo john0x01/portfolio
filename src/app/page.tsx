@@ -296,7 +296,7 @@ export default function Page() {
       <section id="contact" className="w-full flex flex-col items-center">
         <div className="flex w-full max-w-7xl px-4 py-16 flex-col items-center">
           <Animate className="w-full">
-            <div className="flex w-full max-w-[1080px] flex-col items-center gap-12 md:gap-16 p-8 md:py-16 rounded-2xl border border-white/15 relative overflow-hidden">
+            <div className="flex w-full max-w-[1080px] mx-auto flex-col items-center gap-12 md:gap-16 p-8 md:py-16 rounded-2xl border border-white/15 relative overflow-hidden">
               <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary-green to-primary-blue" />
               <header className="w-full flex flex-col items-center gap-8">
                 <div className="flex items-center gap-2">
