@@ -16,11 +16,13 @@ function CareerCard({
   info,
 }: CareerCardProps) {
   return (
-    <div className="w-full grid grid-cols-2 gap-16 px-8 py-16">
-      <div className="flex flex-col gap-8">
+    <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 p-8 md:py-16">
+      <div className="flex flex-col gap-4 md:gap-8">
         <header className="flex flex-col gap-4">
           <h1 className="text-h4">{title}</h1>
-          <span className="md:text-lg font-bold opacity-60">{info}</span>
+          <span className="text-sm md:text-lg font-bold opacity-60">
+            {info}
+          </span>
         </header>
         <ul className="flex w-full flex-wrap gap-2">
           {responsibilities.map((item) => (
@@ -28,8 +30,10 @@ function CareerCard({
               key={item}
               className="flex items-center gap-2 h-8 px-4 bg-[#090909] rounded-full"
             >
-              <Check className="text-primary-blue" />
-              <span className="text-sm md:text-base opacity-60">{item}</span>
+              <Check className="text-primary-blue scale-75 md:scale-100" />
+              <span className="text-xs sm:text-sm md:text-base opacity-60">
+                {item}
+              </span>
             </li>
           ))}
         </ul>

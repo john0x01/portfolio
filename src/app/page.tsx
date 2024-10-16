@@ -283,17 +283,20 @@ export default function Page() {
           <Animate direction="right">
             <h1 className="text-h2">Carreira</h1>
           </Animate>
-          <div className="flex w-full gap-16">
-            <TracingBeam className="flex gap-16">
+          <div className="flex w-full ">
+            <TracingBeam className="hidden md:flex md:gap-16">
               <CareerCards />
             </TracingBeam>
+            <div className="w-full flex md:hidden">
+              <CareerCards />
+            </div>
           </div>
         </div>
       </section>
       <section id="contact" className="w-full flex flex-col items-center">
         <div className="flex w-full max-w-7xl px-4 py-16 flex-col items-center">
-          <Animate>
-            <div className="flex w-full max-w-[1080px] flex-col items-center gap-16 px-8 py-16 rounded-2xl border border-white/15 relative overflow-hidden">
+          <Animate className="w-full">
+            <div className="flex w-full max-w-[1080px] flex-col items-center gap-12 md:gap-16 p-8 md:py-16 rounded-2xl border border-white/15 relative overflow-hidden">
               <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary-green to-primary-blue" />
               <header className="w-full flex flex-col items-center gap-8">
                 <div className="flex items-center gap-2">
@@ -301,29 +304,29 @@ export default function Page() {
                     src={'/pfp.jpg'}
                     width={64}
                     height={64}
-                    className="rounded-full"
                     alt="João Rocha"
+                    className="rounded-full scale-75 lg:scale-100"
                   />
                   <span className="text-h4">João Rocha</span>
                 </div>
-                <ul className="flex gap-2">
+                <ul className="flex gap-2 flex-wrap justify-center">
                   <li className="flex items-center gap-2 px-4 h-8 bg-white/5 rounded-full">
-                    <span className="text-sm md:text-base opacity-60">
+                    <span className="text-xs sm:text-sm md:text-base opacity-60">
                       Front-end
                     </span>
                   </li>
                   <li className="flex items-center gap-2 px-4 h-8 bg-white/5 rounded-full">
-                    <span className="text-sm md:text-base opacity-60">
+                    <span className="text-xs sm:text-sm md:text-base opacity-60">
                       Back-end
                     </span>
                   </li>
                   <li className="flex items-center gap-2 px-4 h-8 bg-white/5 rounded-full">
-                    <span className="text-sm md:text-base opacity-60">
+                    <span className="text-xs sm:text-sm md:text-base opacity-60">
                       Mobile
                     </span>
                   </li>
                   <li className="flex items-center gap-2 px-4 h-8 bg-white/5 rounded-full">
-                    <span className="text-sm md:text-base opacity-60">
+                    <span className="text-xs sm:text-sm md:text-base opacity-60">
                       UI/UX
                     </span>
                   </li>
