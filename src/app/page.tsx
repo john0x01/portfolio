@@ -171,7 +171,7 @@ export default function Page() {
         className="w-full flex flex-col items-center relative"
       >
         <div className="w-full max-w-7xl px-4 py-8 sm:py-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="absolute right-1/2 hidden md:block">
+          <div className="absolute right-[40%] hidden md:block">
             <Image
               src={'/pfp-large.jpg'}
               alt="João Rocha"
@@ -192,7 +192,7 @@ export default function Page() {
             </div>
           </div>
           <div className="flex flex-col gap-6">
-            <h1 className="text-h2">Sobre mim</h1>
+            <h1 className="text-h2 z-50">Sobre mim</h1>
             <p className="text-sm md:text-base opacity-80">
               Sou um programador e entusiasta da tecnologia, do marketing e
               empreendedorismo. Trabalhei nos últimos dois anos como
@@ -245,6 +245,60 @@ export default function Page() {
             <TracingBeam className="flex gap-16">
               <CareerCards />
             </TracingBeam>
+          </div>
+        </div>
+      </section>
+      <section id="contact" className="w-full flex flex-col items-center">
+        <div className="flex w-full max-w-7xl px-4 py-16 flex-col items-center">
+          <div className="flex w-full max-w-[1080px] flex-col items-center gap-16 px-8 py-16 rounded-2xl border border-white/15 relative overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary-green to-primary-blue" />
+            <header className="w-full flex flex-col items-center gap-8">
+              <div className="flex items-center gap-2">
+                <Image
+                  src={'/pfp.jpg'}
+                  width={64}
+                  height={64}
+                  className="rounded-full"
+                  alt="João Rocha"
+                />
+                <span className="text-h4">João Rocha</span>
+              </div>
+              <ul className="flex gap-2">
+                <li className="flex items-center gap-2 px-4 h-8 bg-white/5 rounded-full">
+                  <span className="text-sm md:text-base opacity-60">
+                    Front-end
+                  </span>
+                </li>
+                <li className="flex items-center gap-2 px-4 h-8 bg-white/5 rounded-full">
+                  <span className="text-sm md:text-base opacity-60">
+                    Back-end
+                  </span>
+                </li>
+                <li className="flex items-center gap-2 px-4 h-8 bg-white/5 rounded-full">
+                  <span className="text-sm md:text-base opacity-60">
+                    Mobile
+                  </span>
+                </li>
+                <li className="flex items-center gap-2 px-4 h-8 bg-white/5 rounded-full">
+                  <span className="text-sm md:text-base opacity-60">UI/UX</span>
+                </li>
+              </ul>
+            </header>
+            <p className="text-sm md:text-base opacity-80 text-center">
+              Forem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
+              turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
+              nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
+              tellus elit sed risus. Maecenas eget condimentum velit, sit amet
+              feugiat lectus. Class aptent taciti sociosqu ad litora torquent
+              per conubia nostra, per inceptos himenaeos. Praesent auctor purus
+              luctus enim egestas, ac scelerisque ante pulvinar. Donec ut
+              rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur
+              vel bibendum lorem. Morbi convallis convallis diam sit amet
+              lacinia. Aliquam in elementum tellus.
+            </p>
+            <div className="flex flex-col gap-4 items-center">
+              <Button>🔥 Quero te contratar agora</Button>
+            </div>
           </div>
         </div>
       </section>

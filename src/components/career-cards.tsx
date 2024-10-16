@@ -26,7 +26,7 @@ function CareerCard({
           {responsibilities.map((item) => (
             <li
               key={item}
-              className="flex items-center gap-2 px-4 py-[2px] bg-[#090909] rounded-full"
+              className="flex items-center gap-2 h-8 px-4 bg-[#090909] rounded-full"
             >
               <Check className="text-primary-blue" />
               <span className="text-sm md:text-base opacity-60">{item}</span>
@@ -47,6 +47,9 @@ export function CareerCards() {
       {cards.map((card, idx) => (
         <motion.div
           onMouseEnter={() => setHoveredIndex(idx)}
+          animate={{
+            backgroundColor: hoveredIndex === idx ? '#050509' : '',
+          }}
           key={'card' + idx}
           className="w-full border border-white/15 rounded-2xl relative overflow-hidden"
         >
