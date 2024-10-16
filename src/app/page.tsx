@@ -8,6 +8,8 @@ import { Download, Star } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { CareerCards } from '@/components/career-cards'
+import { TracingBeam } from '@/components/ui/tracing-beam'
 import {
   SiGithub,
   SiInstagram,
@@ -19,7 +21,10 @@ export default function Page() {
   return (
     <main className="flex flex-col w-full relative overflow-x-hidden">
       <NavBar />
-      <section className="flex w-full h-[720px] sm:h-[900px] items-center justify-center relative">
+      <section
+        id="home"
+        className="flex w-full h-[720px] sm:h-[900px] items-center justify-center relative"
+      >
         <div className="w-full max-w-[1080px] px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col gap-6">
             <h1 className="text-h1">
@@ -175,7 +180,7 @@ export default function Page() {
             />
             <div className="absolute left-0 top-0 right-0 bottom-0 bg-gradient-to-r from-[#010101] via-transparent to-[#010101]" />
           </div>
-          <div>
+          <div className="md:h-[600px]">
             <div className="relative md:hidden">
               <Image
                 src={'/pfp-large.jpg'}
@@ -230,6 +235,16 @@ export default function Page() {
                 </Button>
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="w-full flex flex-col items-center">
+        <div className="flex w-full max-w-7xl flex-col p-4 gap-4 sm:gap-8 md:gap-16">
+          <h1 className="text-h2">Carreira</h1>
+          <div className="flex w-full gap-16">
+            <TracingBeam className="flex gap-16">
+              <CareerCards />
+            </TracingBeam>
           </div>
         </div>
       </section>

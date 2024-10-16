@@ -36,10 +36,8 @@ export function NavBar() {
   useMotionValueEvent(scrollYProgress, 'change', () => {
     if (scrollYProgress.get() < 0.05) {
       setScrolled(false)
-      console.log(false)
     } else {
       setScrolled(true)
-      console.log(true)
     }
   })
 
@@ -53,10 +51,13 @@ export function NavBar() {
           }}
           animate={{
             y: 0,
-            backgroundColor: scrolled ? '#030303' : 'transparent',
-            borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.15)' : '',
             paddingLeft: scrolled ? 32 : 0,
             paddingRight: scrolled ? 32 : 0,
+            backgroundColor: scrolled ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
+            backdropFilter: scrolled ? 'blur(80px)' : '',
+          }}
+          style={{
+            borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.15)' : '',
           }}
           transition={{
             duration: 0.2,
@@ -68,8 +69,8 @@ export function NavBar() {
               <Image
                 src={'/pfp.jpg'}
                 alt="Profile picture"
-                height={64}
-                width={64}
+                height={48}
+                width={48}
                 className="rounded-full scale-75 lg:scale-100"
               />
               {scrolled ? (
