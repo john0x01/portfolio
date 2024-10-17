@@ -70,7 +70,24 @@ const items = [
     title: 'Desenvolvimento Mobile',
     description:
       'Com experiência em desenvolvimento mobile, crio aplicativos robustos com React Native. Utilizando React Native e Expo, desenvolvo interfaces fluidas e de alta performance para Android e iOS.',
-    header: <Skeleton />,
+    header: (
+      <div className="flex w-full min-h-40 relative">
+        <div className="flex w-full flex-col gap-4 mx-8">
+          <div className="flex w-full gap-2 items-center border rounded-full py-1 px-2 group-hover/bento:rotate-[5deg] group-hover/bento:-translate-x-[5px] transition-all duration-200">
+            <div className="bg-gradient-to-tr from-primary-green to-primary-blue w-8 h-8 rounded-full" />
+            <div className="flex w-full h-6 rounded-full bg-border"></div>
+          </div>
+          <div className="flex w-3/4 ml-auto gap-2 items-center border rounded-full py-1 px-2 group-hover/bento:rotate-[-5deg] group-hover/bento:-translate-x-[5px] transition-all duration-200">
+            <div className="flex w-full h-6 rounded-full bg-border"></div>
+            <div className="bg-gradient-to-tr from-primary-green to-primary-blue w-8 h-8 rounded-full" />
+          </div>
+          <div className="flex w-[85%] gap-2 items-center border rounded-full py-1 px-2 group-hover/bento:rotate-[5deg] group-hover/bento:-translate-x-[5px] transition-all duration-200">
+            <div className="bg-gradient-to-tr from-primary-green to-primary-blue w-8 h-8 rounded-full" />
+            <div className="flex w-full h-6 rounded-full bg-border"></div>
+          </div>
+        </div>
+      </div>
+    ),
   },
   {
     title: 'APIs e RESTful',
