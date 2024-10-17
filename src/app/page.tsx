@@ -32,9 +32,7 @@ export default function Page() {
         <div className="w-full max-w-[1080px] px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col gap-6">
             <h1 className="text-h1">
-              Contrate um desenvolvedor{' '}
-              <span className="bg-gradient-to-r from-primary-green to-primary-blue text-transparent bg-clip-text"></span>
-              <FlipWords words={words} />
+              Contrate um desenvolvedor <FlipWords words={words} />
             </h1>
             <Animate fromY={40} duration={0.25}>
               <div className="flex items-center gap-4">
