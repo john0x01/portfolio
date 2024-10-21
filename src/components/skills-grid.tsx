@@ -136,7 +136,26 @@ const items = [
     title: 'APIs e RESTful',
     description:
       'Tenho forte entendimento na construção de APIs RESTful, permitindo comunicação eficiente entre sistemas. Utilizo Node.js e Express para criar APIs escaláveis, assegurando segurança e eficiência nas interações de dados.',
-    header: <Skeleton />,
+    header: (
+      <div className="grid grid-cols-4 w-full min-h-40 relative overflow-hidden text-card">
+        <div className="z-50">
+          <div className="h-12 p-2">GraphQL</div>
+          <div className="h-12 bg-card"></div>
+          <div className="h-12 bg-card"></div>
+        </div>
+        <div className="col-span-2 z-50">
+          <div className="h-12 bg-card"></div>
+          <div className="h-12 p-2">Design Patterns</div>
+          <div className="h-12 bg-card"></div>
+        </div>
+        <div className="z-50">
+          <div className="h-12 bg-card"></div>
+          <div className="h-12 bg-card"></div>
+          <div className="h-12 p-2">SOLID</div>
+        </div>
+        <div className="absolute z-10 left-0 top-0 bottom-4 w-0 group-hover/bento:w-full bg-neutral-200 transition-all duration-300" />
+      </div>
+    ),
   },
   {
     title: 'Design de UI/UX',
