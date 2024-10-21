@@ -52,7 +52,9 @@ export default function Page() {
                 </a>
               </Animate>
               <Animate direction="left" duration={0.25} delay={0.25}>
-                <Button>🔥 Me contrate agora</Button>
+                <Link href="#contact">
+                  <Button>🔥 Me contrate agora</Button>
+                </Link>
               </Animate>
             </div>
           </div>
