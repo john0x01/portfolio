@@ -24,7 +24,7 @@ function NavLink({ href, children }: { href: string; children: ReactNode }) {
   )
 }
 
-export function NavBar() {
+export function NavBar({ language = 'pt' }: { language?: string }) {
   const { scrollYProgress } = useScroll()
   const [scrolled, setScrolled] = useState(false)
   const [sheetOpen, setSheetOpen] = useState(false)
@@ -84,10 +84,10 @@ export function NavBar() {
               )}
             </div>
             <div className="hidden lg:flex items-center gap-6">
-              <NavLink href="#home">Home</NavLink>
-              <NavLink href="#projects">Projetos</NavLink>
-              <NavLink href="#skills">Skills</NavLink>
-              <NavLink href="#about">Sobre</NavLink>
+              <NavLink href="#home">{languages[language].home}</NavLink>
+              <NavLink href="#projects">{languages[language].projects}</NavLink>
+              <NavLink href="#skills">{languages[language].skills}</NavLink>
+              <NavLink href="#about">{languages[language].about}</NavLink>
             </div>
             <div className="flex items-center gap-4">
               <motion.div
@@ -103,11 +103,15 @@ export function NavBar() {
                   duration: 0.5,
                 }}
               >
-                <FlagSelect />
+                <FlagSelect
+                  defaultFlag={language === 'pt' ? 'brazil' : 'usa'}
+                />
               </motion.div>
               <Link href="#contact">
-                <Button className="hidden sm:flex">🔥 Me contrate agora</Button>
-                <Button className="sm:hidden">Contratar</Button>
+                <Button>🔥 {languages[language].cta}</Button>
+                <Button className="sm:hidden">
+                  {languages[language].ctaShort}
+                </Button>
               </Link>
               <Button
                 variant="ghost"
@@ -143,35 +147,63 @@ export function NavBar() {
             href="#home"
             className="text-xl sm:text-2xl"
           >
-            Home
+            {languages[language].home}
           </Link>
           <Link
             onClick={handleToggleSheet}
             href="#projects"
             className="text-xl sm:text-2xl"
           >
-            Projetos
+            {languages[language].projects}
           </Link>
           <Link
             onClick={handleToggleSheet}
             href="#skills"
             className="text-xl sm:text-2xl"
           >
-            Skills
+            {languages[language].skills}
           </Link>
           <Link
             onClick={handleToggleSheet}
             href="#about"
             className="text-xl sm:text-2xl"
           >
-            Sobre
+            {languages[language].about}
           </Link>
           <FlagSelect mobile />
           <Link onClick={handleToggleSheet} href="#contact">
-            <Button>🔥 Me contrate agora</Button>
+            <Button>🔥 {languages[language].cta}</Button>
           </Link>
         </SheetContent>
       </Sheet>
     </>
   )
+}
+
+const languages = {
+  pt: {
+    home: 'Home',
+    projects: 'Projetos',
+    skills: 'Skills',
+    about: 'Sobre',
+    cta: 'Me contrate agora',
+    ctaShort: 'Contratar',
+  },
+  en: {
+    home: 'Home',
+    projects: 'Projects',
+    skills: 'Skills',
+    about: 'About',
+    cta: 'Hire me now',
+    ctaShort: 'Hire',
+  },
+} as {
+  [key: string]: {
+    home: string
+    projects: string
+    skills: string
+    about: string
+    cta: string
+    ctaShort: string
+  }
 }
