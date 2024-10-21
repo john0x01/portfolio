@@ -1,10 +1,23 @@
 'use client'
+import Image from 'next/image'
 import { InfiniteMovingCards } from './ui/infinite-moving-cards'
 
 export function MovingSkills() {
   return (
     <div className="flex w-full items-center relative overflow-hidden">
-      <InfiniteMovingCards items={skills} direction="right" speed="slow" />
+      <InfiniteMovingCards
+        items={skills.map((item, idx) => (
+          <Image
+            key={item.src + idx}
+            src={item.src}
+            alt={item.alt}
+            height={item.height}
+            width={item.width}
+          />
+        ))}
+        direction="right"
+        speed="slow"
+      />
     </div>
   )
 }

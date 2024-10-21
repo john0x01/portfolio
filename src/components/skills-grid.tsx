@@ -1,6 +1,15 @@
-import { SiReact, SiVercel } from '@icons-pack/react-simple-icons'
+import {
+  SiAmazonwebservices,
+  SiDigitalocean,
+  SiDocker,
+  SiGithub,
+  SiNginx,
+  SiReact,
+  SiVercel,
+} from '@icons-pack/react-simple-icons'
 import { BentoGrid, BentoGridItem } from './ui/bento-grid'
 import { Button } from './ui/button'
+import { InfiniteMovingCards } from './ui/infinite-moving-cards'
 
 export function SkillsGrid() {
   return (
@@ -20,6 +29,40 @@ export function SkillsGrid() {
 const Skeleton = () => (
   <div className="flex w-full min-h-40 rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800"></div>
 )
+
+const devOpsSkills = [
+  {
+    name: 'Docker',
+    icon: SiDocker,
+    color: '#2496ED',
+  },
+  {
+    name: 'GitHub',
+    icon: SiGithub,
+    color: '#181717',
+  },
+  {
+    name: 'AWS',
+    icon: SiAmazonwebservices,
+    color: '#232F3E',
+  },
+  {
+    name: 'Vercel',
+    icon: SiVercel,
+    color: '#000000',
+  },
+  {
+    name: 'DigitalOcean',
+    icon: SiDigitalocean,
+    color: '#0080FF',
+  },
+  {
+    name: 'Nginx',
+    icon: SiNginx,
+    color: '#009639',
+  },
+]
+
 const items = [
   {
     title: 'Desenvolvimento Web',
@@ -111,7 +154,36 @@ const items = [
     title: 'DevOps',
     description:
       'Minha experiência em DevOps envolve automatizar o desenvolvimento e entrega de software. Utilizo serviços da AWS e servidores Nginx para implementar soluções de hospedagem e integração contínua, garantindo agilidade na entrega.',
-    header: <Skeleton />,
+    header: (
+      <div className="flex w-full min-h-40 relative overflow-hidden">
+        <InfiniteMovingCards
+          scrollerClassName="[animation-play-state:paused] group-hover/bento:[animation-play-state:running]"
+          items={devOpsSkills.map((item, idx) => {
+            const Icon = item.icon
+            return (
+              <div
+                key={item.name + idx}
+                className="flex items-center gap-2 h-8 px-4 bg-[#232323] rounded-full"
+              >
+                <Icon size={14} fill={item.color} />
+                <span className="text-xs sm:text-sm md:text-base opacity-60">
+                  {item.name}
+                </span>
+              </div>
+            )
+          })}
+        />
+        <div className="w-12 h-12 rounded-full bg-primary-green absolute left-1/2 right-1/2 -translate-x-1/2 bottom-8 blur-2xl" />
+        <div className="absolute bottom-0 right-1/2 left-1/2 -translate-x-1/2 h-24 aspect-video bg-gradient-to-br from-neutral-900 to-neutral-950 rounded-xl border border-b-0 rounded-b-none overflow-hidden">
+          <div className="w-full flex items-center gap-1 bg-neutral-700 p-1 px-2">
+            <div className="bg-red-500 h-1 w-1 rounded-full" />
+            <div className="bg-yellow-500 h-1 w-1 rounded-full" />
+            <div className="bg-green-500 h-1 w-1 rounded-full" />
+          </div>
+          <div className="flex flex-col gap-2 w-1/2 mx-auto h-full items-center justify-center"></div>
+        </div>
+      </div>
+    ),
   },
   {
     title: 'Desenvolvimento Full-stack',

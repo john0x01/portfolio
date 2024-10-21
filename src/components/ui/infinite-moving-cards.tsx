@@ -1,27 +1,23 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 
 export const InfiniteMovingCards = ({
   items,
   direction = 'left',
   speed = 'fast',
   className,
+  scrollerClassName,
 }: {
-  items: {
-    src: string
-    alt: string
-    width: number
-    height: number
-  }[]
+  items: ReactNode[]
   direction?: 'left' | 'right'
   speed?: 'fast' | 'normal' | 'slow'
   className?: string
+  scrollerClassName?: string
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null)
-  const scrollerRef = React.useRef<HTMLUListElement>(null)
+  const scrollerRef = React.useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     addAnimation()
@@ -77,23 +73,16 @@ export const InfiniteMovingCards = ({
         className,
       )}
     >
-      <ul
+      <div
         ref={scrollerRef}
         className={cn(
           ' flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap',
           start && 'animate-scroll ',
+          scrollerClassName,
         )}
       >
-        {items.map((item, idx) => (
-          <Image
-            key={item.alt + idx}
-            src={item.src}
-            alt={item.alt}
-            height={item.height}
-            width={item.width}
-          />
-        ))}
-      </ul>
+        {items}
+      </div>
     </div>
   )
 }
