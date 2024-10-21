@@ -157,7 +157,7 @@ export function ContactForm() {
               </span>
             )}
           </div>
-          <div className="flex flex-col gap-3 col-span-2">
+          <div className="flex flex-col gap-3 md:col-span-2">
             <Label htmlFor="email">E-mail</Label>
             <Input placeholder="seuemail@exemplo.com" {...register('email')} />
             {errors.email && (
@@ -166,7 +166,7 @@ export function ContactForm() {
               </span>
             )}
           </div>
-          <div className="flex flex-col gap-3 col-span-2">
+          <div className="flex flex-col gap-3 md:col-span-2">
             <Label htmlFor="name">Mensagem</Label>
             <Textarea
               rows={5}
