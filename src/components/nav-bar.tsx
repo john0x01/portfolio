@@ -108,7 +108,9 @@ export function NavBar({ language = 'pt' }: { language?: string }) {
                 />
               </motion.div>
               <Link href="#contact">
-                <Button>🔥 {languages[language].cta}</Button>
+                <Button className="hidden sm:block">
+                  🔥 {languages[language].cta}
+                </Button>
                 <Button className="sm:hidden">
                   {languages[language].ctaShort}
                 </Button>
