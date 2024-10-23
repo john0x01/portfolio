@@ -77,15 +77,15 @@ export default function Page() {
       </section>
       <MovingSkills />
       <section
-        className="flex flex-col gap-8 w-full items-center py-8 sm:py-16"
+        className="flex w-full justify-center py-8 sm:py-16"
         id="projects"
       >
-        <div className="flex w-full max-w-7xl px-4">
+        <div className="flex flex-col gap-8 w-full max-w-7xl px-4">
           <Animate direction="right">
             <h1 className="text-h2">Meus Projetos</h1>
           </Animate>
+          <Projects />
         </div>
-        <Projects />
       </section>
       <section className="flex w-full flex-col items-center" id="skills">
         <div className="flex w-full max-w-7xl flex-col gap-16 items-center px-4 py-8 sm:py-16">

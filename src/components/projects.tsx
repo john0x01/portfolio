@@ -1,112 +1,160 @@
 'use client'
-import { Card, Carousel } from '@/components/ui/apple-cards-carousel'
+import { ArrowUpRight } from 'lucide-react'
+import Image from 'next/image'
+import { Animate } from './ui/animate'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs'
 
-export function Projects() {
-  function getCards(cards: typeof data) {
-    return cards.map((card, index) => (
-      <Card key={card.src} card={card} index={index} href={card.href} layout />
-    ))
-  }
+function Cards({ filter }: { filter: string }) {
+  return (
+    <div className="grid grid-cols-4">
+      {data
+        .filter((item) => item.tags.includes(filter))
+        .map((item, index) => (
+          <Animate key={item.title + index} fromY={40}>
+            <div className="flex flex-col border group/card overflow-hidden cursor-pointer">
+              <div className="w-full aspect-[3/4] relative">
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  width={1080}
+                  height={1080}
+                  className="w-full aspect-[3/4] object-cover"
+                />
+                <div className="absolute left-0 w-0 top-0 bottom-0 group-hover/card:w-full transition-all duration-300 bg-black/15" />
+              </div>
+              <div className="flex flex-col px-2 py-4 gap-1 relative">
+                <h1>{item.title}</h1>
+                <p className="text-sm opacity-60 group-hover/card:translate-x-[110%] transition-all duration-300">
+                  {item.description}
+                </p>
+                <ArrowUpRight
+                  size={32}
+                  className="absolute right-2 bottom-4 opacity-0 -rotate-180 -translate-x-full group-hover/card:translate-x-0 group-hover/card:rotate-0 group-hover/card:opacity-100 transition-all duration-300"
+                />
+              </div>
+            </div>
+          </Animate>
+        ))}
+    </div>
+  )
+}
 
+export function Projects() {
   return (
     <Tabs defaultValue="featured" className="w-full flex flex-col items-center">
-      <TabsContent className="w-full" value="featured">
-        <Carousel
-          items={getCards(
-            data.filter((item) => item.tags.includes('featured')),
-          )}
-        />
-      </TabsContent>
-      <TabsContent className="w-full" value="saas">
-        <Carousel
-          items={getCards(data.filter((item) => item.tags.includes('saas')))}
-        />
-      </TabsContent>
-      <TabsContent className="w-full" value="apps">
-        <Carousel
-          items={getCards(data.filter((item) => item.tags.includes('apps')))}
-        />
-      </TabsContent>
-      <TabsContent className="w-full" value="landing pages">
-        <Carousel
-          items={getCards(
-            data.filter((item) => item.tags.includes('landing pages')),
-          )}
-        />
-      </TabsContent>
-      <TabsList className="hidden sm:flex w-full max-w-7xl px-4 py-8 bg-transparent mt-10">
+      <TabsList className="hidden sm:grid grid-cols-5 w-full bg-transparent h-fit">
         <TabsTrigger
-          className="w-full rounded-full data-[state=active]:bg-[#131313] text-sm sm:md-base"
+          className="border border-border/50 py-4 data-[state=active]:bg-white data-[state=active]:text-black text-sm sm:md-base group relative overflow-hidden"
           value="featured"
         >
-          Destaque
+          <span className="group-hover:-translate-y-1 transition-all duration-200">
+            Destaques
+          </span>
+          <div className="absolute h-[1px] left-0 -bottom-2 right-0 bg-white group-hover:-translate-y-2 transition-all duration-200" />
         </TabsTrigger>
         <TabsTrigger
-          className="w-full rounded-full data-[state=active]:bg-[#131313] text-sm sm:md-base"
+          className="border border-border/50 py-4 data-[state=active]:bg-white data-[state=active]:text-black text-sm sm:md-base group relative overflow-hidden"
           value="saas"
         >
-          SaaS
+          <span className="group-hover:-translate-y-1 transition-all duration-200">
+            SaaS
+          </span>
+          <div className="absolute h-[1px] left-0 -bottom-2 right-0 bg-white group-hover:-translate-y-2 transition-all duration-200" />
         </TabsTrigger>
         <TabsTrigger
-          className="w-full rounded-full data-[state=active]:bg-[#131313] text-sm sm:md-base"
+          className="border border-border/50 py-4 data-[state=active]:bg-white data-[state=active]:text-black text-sm sm:md-base group relative overflow-hidden"
           value="apps"
         >
-          Aplicativos
+          <span className="group-hover:-translate-y-1 transition-all duration-200">
+            Apps
+          </span>
+          <div className="absolute h-[1px] left-0 -bottom-2 right-0 bg-white group-hover:-translate-y-2 transition-all duration-200" />
         </TabsTrigger>
         <TabsTrigger
-          className="w-full rounded-full data-[state=active]:bg-[#131313] text-sm sm:md-base"
-          value="landing pages"
+          className="border border-border/50 py-4 data-[state=active]:bg-white data-[state=active]:text-black text-sm sm:md-base group relative overflow-hidden"
+          value="websites"
         >
-          Landing Pages
+          <span className="group-hover:-translate-y-1 transition-all duration-200">
+            Websites
+          </span>
+          <div className="absolute h-[1px] left-0 -bottom-2 right-0 bg-white group-hover:-translate-y-2 transition-all duration-200" />
+        </TabsTrigger>
+        <TabsTrigger
+          className="border border-border/50 py-4 data-[state=active]:bg-white data-[state=active]:text-black text-sm sm:md-base group relative overflow-hidden"
+          value="dashboards"
+        >
+          <span className="group-hover:-translate-y-1 transition-all duration-200">
+            Dashboards
+          </span>
+          <div className="absolute h-[1px] left-0 -bottom-2 right-0 bg-white group-hover:-translate-y-2 transition-all duration-200" />
         </TabsTrigger>
       </TabsList>
+      <TabsContent className="w-full" value="featured">
+        <Cards filter="featured" />
+      </TabsContent>
+      <TabsContent className="w-full" value="saas">
+        <Cards filter="saas" />
+      </TabsContent>
+      <TabsContent className="w-full" value="apps">
+        <Cards filter="apps" />
+      </TabsContent>
+      <TabsContent className="w-full" value="websites">
+        <Cards filter="websites" />
+      </TabsContent>
+      <TabsContent className="w-full" value="dashboards">
+        <Cards filter="dashboards" />
+      </TabsContent>
     </Tabs>
   )
 }
 
 const data = [
   {
-    category: 'SaaS',
-    title: 'Corelli Landing Page + Dashboard',
-    src: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    tags: ['featured', 'saas', 'landing pages'],
+    title: 'Corelli',
+    src: '/projects/corelli-cover.png',
+    tags: ['featured', 'dashboards', 'websites'],
     href: '/projects/corelli',
+    description:
+      'Corelli é uma plataforma de CRM projetada para otimizar a gestão empresarial.',
   },
   {
-    category: 'Aplicativo',
-    title: 'Central Caverna',
-    src: 'https://images.unsplash.com/photo-1531554694128-c4c6665f59c2?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    tags: ['featured', 'apps'],
-    href: '/projects/central-caverna',
-  },
-  {
-    category: 'SaaS',
-    title: 'Launching the new Apple Vision Pro.',
-    src: 'https://images.unsplash.com/photo-1713869791518-a770879e60dc?q=80&w=2333&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: 'Booking GPT',
+    src: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     tags: ['featured', 'saas'],
-    href: '/',
+    href: '/projects/corelli',
+    description:
+      'Corelli é uma plataforma de CRM projetada para otimizar a gestão empresarial.',
   },
-
   {
-    category: 'Aplicativo',
-    title: 'App Solus Sistema',
-    src: 'https://images.unsplash.com/photo-1599202860130-f600f4948364?q=80&w=2515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: 'Central Caverna',
+    src: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     tags: ['featured', 'apps'],
-    href: '/projects/solus-sistema',
+    href: '/projects/corelli',
+    description:
+      'Corelli é uma plataforma de CRM projetada para otimizar a gestão empresarial.',
   },
   {
-    category: '',
-    title: 'Photography just got better.',
-    src: 'https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?q=80&w=2793&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    tags: ['featured', 'landing pages'],
-    href: '/',
-  },
-  {
-    category: 'Hiring',
-    title: 'Hiring for a Staff Software Engineer',
-    src: 'https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: 'Solus Visitas',
+    src: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     tags: ['featured', 'apps'],
-    href: '/',
+    href: '/projects/corelli',
+    description:
+      'Corelli é uma plataforma de CRM projetada para otimizar a gestão empresarial.',
+  },
+  {
+    title: 'Burger Delivery',
+    src: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    tags: ['apps'],
+    href: '/projects/corelli',
+    description:
+      'Corelli é uma plataforma de CRM projetada para otimizar a gestão empresarial.',
+  },
+  {
+    title: 'Hive Pay',
+    src: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    tags: ['websites', 'dashboards'],
+    href: '/projects/corelli',
+    description:
+      'Corelli é uma plataforma de CRM projetada para otimizar a gestão empresarial.',
   },
 ]
