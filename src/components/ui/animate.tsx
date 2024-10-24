@@ -10,6 +10,7 @@ interface AnimateProps {
   delay?: number
   fromX?: number
   fromY?: number
+  once?: boolean
 }
 
 const INITIAL_Y_POS = {
@@ -34,9 +35,10 @@ export function Animate({
   delay = 0,
   fromX,
   fromY,
+  once = true,
 }: AnimateProps) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
+  const isInView = useInView(ref, { once })
 
   const initialY = INITIAL_Y_POS[direction]
   const initialX = INITIAL_X_POS[direction]
