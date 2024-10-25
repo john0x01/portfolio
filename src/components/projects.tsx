@@ -1,7 +1,7 @@
 'use client'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
-import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { Animate } from './ui/animate'
@@ -18,7 +18,7 @@ function Card({
   return (
     <div
       className={cn(
-        'flex flex-col border group/card overflow-hidden cursor-pointer',
+        'flex flex-col border group/card overflow-hidden h-full',
         className,
       )}
     >
@@ -30,17 +30,21 @@ function Card({
           height={1080}
           className="w-full aspect-[3/4] object-cover"
         />
-        <div className="absolute left-0 w-0 top-0 bottom-0 group-hover/card:w-full transition-all duration-300 bg-black/15" />
+        <div className="absolute left-0 top-0 bottom-0 right-0 opacity-0 group-hover/card:opacity-100 transition-all duration-500 bg-black/50">
+          <div className="absolute left-0 top-4 group-hover/card:translate-x-4 transition-all duration-700 py-2 px-4 bg-[#090909] rounded-full">
+            <span className="text-xs md:sm">{item.service}</span>
+          </div>
+        </div>
       </div>
       <div className="flex flex-col px-2 py-4 gap-1 relative">
         <h1>{item.title}</h1>
-        <p className="text-sm opacity-60 group-hover/card:translate-x-[110%] transition-all duration-300">
+        <p className="text-sm opacity-60 group-hover/card:translate-x-4 transition-all duration-300">
           {item.description}
         </p>
-        <ArrowUpRight
+        {/* <ArrowUpRight
           size={32}
           className="absolute right-2 bottom-4 opacity-0 -rotate-180 -translate-x-full group-hover/card:translate-x-0 group-hover/card:rotate-0 group-hover/card:opacity-100 transition-all duration-300"
-        />
+        /> */}
       </div>
     </div>
   )
@@ -217,47 +221,55 @@ const data = [
     src: '/projects/corelli-cover.png',
     tags: ['featured', 'dashboards', 'websites'],
     href: '/projects/corelli',
+    service: 'UI Design',
     description:
-      'Corelli é uma plataforma de CRM projetada para otimizar a gestão empresarial.',
+      'Plataforma de CRM projetada para otimizar a gestão empresarial.',
   },
   {
     title: 'Booking GPT',
     src: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    tags: ['featured', 'saas'],
+    // tags: ['featured', 'saas'],
+    tags: ['saas'],
     href: '/projects/corelli',
-    description:
-      'Corelli é uma plataforma de CRM projetada para otimizar a gestão empresarial.',
+    description: 'Bot de atendimento utilizando modelo da OpenAI',
+    service: 'Desenvolvimento',
   },
   {
     title: 'Central Caverna',
-    src: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    src: '/projects/central-caverna-cover.png',
     tags: ['featured', 'apps'],
     href: '/projects/corelli',
     description:
       'Corelli é uma plataforma de CRM projetada para otimizar a gestão empresarial.',
+    service: 'Desenvolvimento Mobile',
   },
   {
     title: 'Solus Visitas',
-    src: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    tags: ['featured', 'apps'],
+    src: '/projects/solus-visitas-cover.png',
+    // tags: ['featured', 'apps'],
+    tags: ['apps'],
     href: '/projects/corelli',
     description:
-      'Corelli é uma plataforma de CRM projetada para otimizar a gestão empresarial.',
+      'Aplicativo voltado a criação e vistoria de laudos no agronegócio.',
+    service: 'Desenvolvimento Mobile & UI',
   },
   {
     title: 'Burger Delivery',
     src: '/projects/delivery-cover.png',
-    tags: ['apps'],
+    // tags: ['apps'],
+    tags: ['apps', 'featured'],
     href: '/projects/corelli',
     description:
-      'Corelli é uma plataforma de CRM projetada para otimizar a gestão empresarial.',
+      'Aplicativo de compra e delivery de restaurante do ramo de hamburgueria.',
+    service: 'UI Design',
   },
   {
     title: 'Hive Pay',
-    src: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    tags: ['websites', 'dashboards'],
+    src: '/projects/hivepay-cover.png',
+    // tags: ['websites', 'dashboards'],
+    tags: ['websites', 'dashboards', 'featured'],
     href: '/projects/corelli',
-    description:
-      'Corelli é uma plataforma de CRM projetada para otimizar a gestão empresarial.',
+    description: 'Plataforma de pagamentos e checkout.',
+    service: 'UI Design',
   },
 ]
