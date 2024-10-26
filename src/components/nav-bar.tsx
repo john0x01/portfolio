@@ -62,7 +62,7 @@ export function NavBar({ language = 'pt' }: { language?: string }) {
           transition={{
             duration: 0.2,
           }}
-          className="fixed left-0 right-0 flex justify-center z-50 bg-background"
+          className="fixed left-0 right-0 flex justify-center z-[51] bg-background"
         >
           <div className="w-full max-w-7xl flex p-4 items-center justify-between">
             <div className="flex items-center gap-2">
