@@ -182,18 +182,26 @@ export function ContactForm() {
         </div>
         {phase === 0 ? (
           <DialogFooter>
-            <DialogClose asChild>
-              <Button variant="secondary">Cancelar</Button>
-            </DialogClose>
-            <Button
-              variant="default"
-              onClick={handleSubmit(handleSubmitData)}
-              disabled={
-                !name || !cellphone || !email || !message || state.submitting
-              }
-            >
-              Próximo
-            </Button>
+            <div className="grid grid-cols-2">
+              <DialogClose asChild>
+                <Button
+                  className="w-full h-12 text-sm text-center rounded-none focus:outline-none"
+                  variant="outline"
+                >
+                  Cancelar
+                </Button>
+              </DialogClose>
+              <Button
+                className="w-full h-12 text-sm text-center rounded-none focus:outline-none"
+                variant="outline"
+                onClick={handleSubmit(handleSubmitData)}
+                disabled={
+                  !name || !cellphone || !email || !message || state.submitting
+                }
+              >
+                Próximo
+              </Button>
+            </div>
           </DialogFooter>
         ) : (
           <DialogFooter>
