@@ -227,11 +227,11 @@ const data = [
   },
   {
     title: 'Booking GPT',
-    src: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    // tags: ['featured', 'saas'],
-    tags: ['saas'],
+    src: '/projects/booking-gpt-cover.png',
+    tags: ['featured', 'saas'],
     href: '/projects/corelli',
-    description: 'Bot de atendimento utilizando modelo da OpenAI',
+    description:
+      'Bot de agendamento no WhatsApp feito utilizando modelo da OpenAI',
     service: 'Desenvolvimento',
   },
   {
@@ -239,15 +239,13 @@ const data = [
     src: '/projects/central-caverna-cover.png',
     tags: ['featured', 'apps'],
     href: '/projects/corelli',
-    description:
-      'Corelli é uma plataforma de CRM projetada para otimizar a gestão empresarial.',
+    description: 'Aplicativo de produtividade e controle de diversas áreas.',
     service: 'Desenvolvimento Mobile',
   },
   {
     title: 'Solus Visitas',
     src: '/projects/solus-visitas-cover.png',
-    // tags: ['featured', 'apps'],
-    tags: ['apps'],
+    tags: ['featured', 'apps'],
     href: '/projects/corelli',
     description:
       'Aplicativo voltado a criação e vistoria de laudos no agronegócio.',
@@ -256,18 +254,15 @@ const data = [
   {
     title: 'Burger Delivery',
     src: '/projects/delivery-cover.png',
-    // tags: ['apps'],
-    tags: ['apps', 'featured'],
+    tags: ['apps'],
     href: '/projects/corelli',
-    description:
-      'Aplicativo de compra e delivery de restaurante do ramo de hamburgueria.',
+    description: 'Aplicativo de delivery para hamburgueria.',
     service: 'UI Design',
   },
   {
     title: 'Hive Pay',
     src: '/projects/hivepay-cover.png',
-    // tags: ['websites', 'dashboards'],
-    tags: ['websites', 'dashboards', 'featured'],
+    tags: ['websites', 'dashboards'],
     href: '/projects/corelli',
     description: 'Plataforma de pagamentos e checkout.',
     service: 'UI Design',
