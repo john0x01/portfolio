@@ -139,23 +139,19 @@ const items = [
     description:
       'Tenho forte entendimento na construção de APIs RESTful, permitindo comunicação eficiente entre sistemas. Utilizo Node.js e Express para criar APIs escaláveis, assegurando segurança e eficiência nas interações de dados.',
     header: (
-      <div className="grid grid-cols-4 w-full min-h-40 relative overflow-hidden text-card">
-        <div className="z-20">
-          <div className="h-12 p-2">GraphQL</div>
-          <div className="h-12 bg-background"></div>
-          <div className="h-12 bg-background"></div>
+      <div className="flex flex-col justify-center gap-2 w-full min-h-40 relative overflow-hidden bg-dot">
+        <div className="flex items-center w-[55%] translate-x-[-110%] group-hover/bento:translate-x-0 transition-all duration-[800ms] border rounded-full py-1 px-2 bg-background">
+          <span className="text-xs opacity-80">GraphQL</span>
         </div>
-        <div className="col-span-2 z-20">
-          <div className="h-12 bg-background"></div>
-          <div className="h-12 p-2">Design Patterns</div>
-          <div className="h-12 bg-background"></div>
+        <div className="flex items-center w-[65%] translate-x-[-110%] group-hover/bento:translate-x-0 transition-all duration-[900ms] border rounded-full py-1 px-2 bg-background">
+          <span className="text-xs opacity-80">Express</span>
         </div>
-        <div className="z-20">
-          <div className="h-12 bg-background"></div>
-          <div className="h-12 bg-background"></div>
-          <div className="h-12 p-2">SOLID</div>
+        <div className="flex items-center w-[45%] translate-x-[-110%] group-hover/bento:translate-x-0 transition-all duration-700 border rounded-full py-1 px-2 bg-background">
+          <span className="text-xs opacity-80">SOLID</span>
         </div>
-        <div className="absolute z-10 left-0 top-0 bottom-4 w-0 group-hover/bento:w-full bg-neutral-200 transition-all duration-300" />
+        <div className="flex items-center w-[70%] translate-x-[-110%] group-hover/bento:translate-x-0 transition-all duration-1000 border rounded-full py-1 px-2 bg-background">
+          <span className="text-xs opacity-80">Design Patterns</span>
+        </div>
       </div>
     ),
   },
