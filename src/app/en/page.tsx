@@ -80,12 +80,12 @@ export default function Page() {
         className="flex flex-col gap-8 w-full items-center py-8 sm:py-16 overflow-y-hidden"
         id="projects"
       >
-        <div className="flex w-full max-w-7xl px-4">
+        <div className="flex flex-col gap-8 w-full max-w-7xl px-4">
           <Animate direction="right">
             <h1 className="text-h2">My Projects</h1>
           </Animate>
+          <Projects />
         </div>
-        <Projects />
       </section>
       <section
         className="flex w-full flex-col items-center overflow-y-hidden"
