@@ -165,7 +165,31 @@ const items = [
     title: 'Banco de Dados',
     description:
       'Possuo experiência em gerenciamento de dados, utilizando bancos de dados relacionais SQL e NoSQL. Estou familiarizado com modelagem e otimização de consultas, garantindo eficiência no armazenamento e recuperação de informações.',
-    header: <Skeleton />,
+    header: (
+      <div className="flex flex-col gap-4 w-full min-h-40 relative bg-dot px-[12%]">
+        <Card className="flex gap-4 p-2 mr-auto group-hover/bento:rotate-[5deg] group-hover/bento:translate-x-2 group-hover/bento:-translate-y-0 rounded-2xl transition-all duration-200">
+          <Image
+            src={'/pfp.jpg'}
+            alt="João Rocha"
+            height={48}
+            width={48}
+            className="rounded-full min-w-12 scale-75 lg:scale-100"
+          />
+          <span className="text-xs font-bold opacity-60">
+            SELECT * FROM Transactions JOIN Users ON Transactions.UserID =
+            User.ID
+          </span>
+        </Card>
+        <Card className="flex items-center justify-end gap-4 p-1 pl-4 w-full max-w-[80%] ml-auto group-hover/bento:rotate-[-5deg] group-hover/bento:-translate-x-2 group-hover/bento:-translate-y-0 rounded-2xl transition-all duration-200">
+          <div className="flex items-center gap-2">
+            <div className="rounded-full inline-block w-2 h-2 bg-white/60 group-hover/bento:animate-bounce duration-100" />
+            <div className="rounded-full inline-block w-2 h-2 bg-white/60 group-hover/bento:animate-bounce" />
+            <div className="rounded-full inline-block w-2 h-2 bg-white/60 group-hover/bento:animate-bounce" />
+          </div>
+          <div className="rounded-full inline-block min-w-12 min-h-12 bg-gradient-to-r from-primary-green to-primary-blue scale-75 lg:scale-100" />
+        </Card>
+      </div>
+    ),
   },
   {
     title: 'DevOps',
@@ -208,7 +232,7 @@ const items = [
       'Como desenvolvedor full-stack, atuo em todas as camadas do desenvolvimento, do front-end ao back-end. Minha proficiência em React, Node.js, Next.js e React Native me permite criar soluções completas que oferecem experiências coesas e facilitam a manutenção.',
     header: (
       <div className="grid grid-cols-3 gap-4 w-full min-h-40 relative bg-dot px-[12%]">
-        <Card className="bg-background rotate-[-5deg] translate-x-4 -translate-y-1 group-hover/bento:rotate-0 group-hover/bento:-translate-x-4 group-hover/bento:-translate-y-0 border-white/5 transition-all duration-200">
+        <Card className="bg-background rotate-[-5deg] translate-x-4 -translate-y-1 group-hover/bento:rotate-0 group-hover/bento:-translate-x-4 group-hover/bento:-translate-y-0 rounded-xl transition-all duration-200">
           <div className="flex flex-col gap-4 p-6 items-center w-full">
             <Image
               src={'/pfp.jpg'}
@@ -227,7 +251,7 @@ const items = [
             </div>
           </div>
         </Card>
-        <Card className="bg-background z-10 border-white/5 transition-all duration-200`">
+        <Card className="bg-background z-10 rounded-xl transition-all duration-200`">
           <div className="flex flex-col gap-4 p-6 items-center w-full">
             <Image
               src={'/pfp.jpg'}
@@ -246,7 +270,7 @@ const items = [
             </div>
           </div>
         </Card>
-        <Card className="bg-background rotate-[5deg] -translate-x-4 -translate-y-1 group-hover/bento:rotate-0 group-hover/bento:translate-x-4 group-hover/bento:-translate-y-0 border-white/5 transition-all duration-200`">
+        <Card className="bg-background rotate-[5deg] -translate-x-4 -translate-y-1 group-hover/bento:rotate-0 group-hover/bento:translate-x-4 group-hover/bento:-translate-y-0 rounded-xl transition-all duration-200`">
           <div className="flex flex-col gap-4 p-6 items-center w-full">
             <Image
               src={'/pfp.jpg'}
