@@ -2,11 +2,13 @@ import {
   SiAmazonwebservices,
   SiDigitalocean,
   SiDocker,
+  SiFigma,
   SiGithub,
   SiNginx,
   SiReact,
   SiVercel,
 } from '@icons-pack/react-simple-icons'
+import { Globe } from 'lucide-react'
 import Image from 'next/image'
 import { BentoGrid, BentoGridItem } from './ui/bento-grid'
 import { Button } from './ui/button'
@@ -28,9 +30,6 @@ export function SkillsGrid() {
     </BentoGrid>
   )
 }
-const Skeleton = () => (
-  <div className="flex w-full min-h-40 rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800"></div>
-)
 
 const devOpsSkills = [
   {
@@ -46,7 +45,7 @@ const devOpsSkills = [
   {
     name: 'AWS',
     icon: SiAmazonwebservices,
-    color: '#232F3E',
+    color: '#85ff0b',
   },
   {
     name: 'Vercel',
@@ -71,7 +70,7 @@ const items = [
     description:
       'Sou especialista em desenvolvimento web, criando aplicações interativas e responsivas. Utilizo React.js e Next.js para desenvolver interfaces modernas, proporcionando experiências fluidas e intuitivas, com foco em acessibilidade e desempenho.',
     header: (
-      <div className="flex w-full min-h-40 relative">
+      <div className="flex w-full min-h-40 relative bg-dot">
         <div className="absolute bottom-1 right-1/2 left-1/2 -translate-x-1/2 group-hover/bento:-translate-y-2 transition-all duration-200 h-36 aspect-video bg-gradient-to-br from-neutral-900 to-neutral-950 rounded-xl border border-b-0 rounded-b-none overflow-hidden">
           <div className="w-full flex items-center gap-1 bg-neutral-700 p-1 px-2">
             <div className="bg-red-500 h-1 w-1 rounded-full" />
@@ -116,7 +115,7 @@ const items = [
     description:
       'Com experiência em desenvolvimento mobile, crio aplicativos robustos com React Native. Utilizando React Native e Expo, desenvolvo interfaces fluidas e de alta performance para Android e iOS.',
     header: (
-      <div className="flex w-full min-h-40 relative">
+      <div className="flex w-full min-h-40 relative bg-dot">
         <div className="flex w-full flex-col gap-4 mx-8">
           <div className="flex w-full gap-2 items-center border rounded-full py-1 px-2 group-hover/bento:rotate-[5deg] group-hover/bento:-translate-x-[5px] transition-all duration-200">
             <div className="bg-gradient-to-tr from-primary-green to-primary-blue w-8 h-8 rounded-full" />
@@ -147,7 +146,7 @@ const items = [
           <span className="text-xs opacity-80">Express</span>
         </div>
         <div className="flex items-center w-[45%] translate-x-[-110%] group-hover/bento:translate-x-0 transition-all duration-700 border rounded-full py-1 px-2 bg-background">
-          <span className="text-xs opacity-80">SOLID</span>
+          <span className="text-xs opacity-80">Web Sockets</span>
         </div>
         <div className="flex items-center w-[70%] translate-x-[-110%] group-hover/bento:translate-x-0 transition-all duration-1000 border rounded-full py-1 px-2 bg-background">
           <span className="text-xs opacity-80">Design Patterns</span>
@@ -159,7 +158,44 @@ const items = [
     title: 'Design de UI/UX',
     description:
       'Minha abordagem em design de UI/UX foca na criação de interfaces que não apenas encantam visualmente, mas também oferecem uma experiência de usuário intuitiva. Com habilidades fortes em prototipagem e wireframing no Figma, sou capaz de transformar requisitos em soluções visuais eficazes, garantindo que cada elemento do design contribua para a usabilidade e acessibilidade.',
-    header: <Skeleton />,
+    header: (
+      <div className="flex items-end justify-center w-full gap-6 min-h-40 relative overflow-hidden bg-dot">
+        <div className="relative group-hover/bento:translate-y-2 transition-all duration-200 h-36 aspect-[12/16] bg-white rounded-xl border-2 border-zinc-500 border-b-0 rounded-b-none overflow-visible">
+          <div className="absolute top-2 left-8 right-8 h-3 rounded-full bg-zinc-200 group-hover/bento:left-2 group-hover/bento:right-2 transition-all duration-300" />
+          <div className="flex flex-col gap-2 w-1/2 mx-auto h-full items-center justify-center p-2">
+            <h1 className="text-zinc-900 text-[10px] font-bold text-center">
+              Landing Pages que convertem
+            </h1>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="secondary"
+                className="h-auto py-[2px] px-2 text-[0.5rem] rounded"
+              >
+                Comprar Agora
+              </Button>
+            </div>
+          </div>
+          <div className="absolute flex items-center justify-center right-0 top-0 translate-x-1/2 -translate-y-1/2 bg-neutral-700 z-10 border h-8 w-8 rounded-full">
+            <Globe size={16} />
+          </div>
+        </div>
+        <div className="relative group-hover/bento:translate-x-2 transition-all duration-200 h-36 aspect-video bg-neutral-200 rounded-xl border border-b-0 rounded-b-none overflow-visible">
+          <div className="w-full flex items-center gap-1 bg-neutral-500 p-1 px-2 rounded-t-2xl">
+            <div className="bg-neutral-400 h-1 w-1 rounded-full" />
+            <div className="bg-neutral-400 h-1 w-1 rounded-full" />
+            <div className="bg-neutral-400 h-1 w-1 rounded-full" />
+          </div>
+          <div className="absolute flex items-center justify-center right-0 top-0 translate-x-1/2 -translate-y-1/2 bg-neutral-700 z-10 border h-8 w-8 rounded-full group-hover/bento:rotate-[-15deg] group-hover/bento:-translate-x-0 group-hover/bento:translate-y-0 transition-all duration-200">
+            <SiFigma size={16} />
+          </div>
+          <div className="flex flex-col gap-2 w-2/3 mx-auto h-full items-center justify-center">
+            <h1 className="text-black text-xs font-bold text-center">
+              Wireframing, Prototipação e Experiência de Usuário
+            </h1>
+          </div>
+        </div>
+      </div>
+    ),
   },
   {
     title: 'Banco de Dados',
@@ -196,7 +232,7 @@ const items = [
     description:
       'Minha experiência em DevOps envolve automatizar o desenvolvimento e entrega de software. Utilizo serviços da AWS e servidores Nginx para implementar soluções de hospedagem e integração contínua, garantindo agilidade na entrega.',
     header: (
-      <div className="flex w-full min-h-40 relative overflow-hidden">
+      <div className="flex w-full min-h-40 relative overflow-hidden bg-dot">
         <InfiniteMovingCards
           scrollerClassName="[animation-play-state:paused] group-hover/bento:[animation-play-state:running]"
           items={devOpsSkills.map((item, idx) => {
