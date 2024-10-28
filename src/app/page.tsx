@@ -27,12 +27,13 @@ export default function Page() {
       <NavBar />
       <section
         id="home"
-        className="flex w-full h-[720px] sm:h-[900px] items-center justify-center relative"
+        className="flex w-full h-[720px] sm:h-[900px] items-center justify-center relative overflow-y-hidden"
       >
         <div className="w-full max-w-[1080px] px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col gap-6">
             <h1 className="text-h1 h-[180px] sm:h-[120px] md:h-[272px] lg:h-[204px]">
-              Contrate um desenvolvedor <FlipWords words={words} />
+              Contrate um desenvolvedor
+              <FlipWords words={words} />
             </h1>
             <Animate fromY={40} duration={0.25}>
               <div className="flex items-center gap-4">
@@ -77,7 +78,7 @@ export default function Page() {
       </section>
       <MovingSkills />
       <section
-        className="flex w-full justify-center py-8 sm:py-16"
+        className="flex w-full justify-center py-8 sm:py-16 overflow-y-hidden"
         id="projects"
       >
         <div className="flex flex-col gap-8 w-full max-w-7xl px-4">
@@ -87,7 +88,10 @@ export default function Page() {
           <Projects />
         </div>
       </section>
-      <section className="flex w-full flex-col items-center" id="skills">
+      <section
+        className="flex w-full flex-col items-center overflow-y-hidden"
+        id="skills"
+      >
         <div className="flex w-full max-w-7xl flex-col gap-16 items-center px-4 py-8 sm:py-16">
           <Animate>
             <h1 className="text-h2">Minhas Skills</h1>
@@ -201,7 +205,7 @@ export default function Page() {
       </section>
       <section
         id="about"
-        className="w-full flex flex-col items-center relative"
+        className="w-full flex flex-col items-center relative overflow-y-hidden"
       >
         <div className="w-full max-w-7xl px-4 py-8 sm:py-16 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="absolute right-[40%] hidden md:block">
@@ -278,7 +282,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="w-full flex flex-col items-center">
+      <section className="w-full flex flex-col items-center overflow-y-hidden">
         <div className="flex w-full max-w-7xl flex-col p-4 gap-4 sm:gap-8 md:gap-16">
           <Animate direction="right">
             <h1 className="text-h2">Carreira</h1>
@@ -293,7 +297,10 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section id="contact" className="w-full flex flex-col items-center">
+      <section
+        id="contact"
+        className="w-full flex flex-col items-center overflow-y-hidden"
+      >
         <div className="flex w-full max-w-7xl px-4 py-16 flex-col items-center">
           <Animate className="w-full">
             <div className="flex w-full max-w-[1080px] mx-auto flex-col items-center gap-12 md:gap-16 p-8 md:py-16 rounded-2xl border border-white/15 relative overflow-hidden">

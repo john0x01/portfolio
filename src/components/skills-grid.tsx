@@ -138,17 +138,17 @@ const items = [
       'Tenho forte entendimento na construção de APIs RESTful, permitindo comunicação eficiente entre sistemas. Utilizo Node.js e Express para criar APIs escaláveis, assegurando segurança e eficiência nas interações de dados.',
     header: (
       <div className="grid grid-cols-4 w-full min-h-40 relative overflow-hidden text-card">
-        <div className="z-50">
+        <div className="z-20">
           <div className="h-12 p-2">GraphQL</div>
           <div className="h-12 bg-card"></div>
           <div className="h-12 bg-card"></div>
         </div>
-        <div className="col-span-2 z-50">
+        <div className="col-span-2 z-20">
           <div className="h-12 bg-card"></div>
           <div className="h-12 p-2">Design Patterns</div>
           <div className="h-12 bg-card"></div>
         </div>
-        <div className="z-50">
+        <div className="z-20">
           <div className="h-12 bg-card"></div>
           <div className="h-12 bg-card"></div>
           <div className="h-12 p-2">SOLID</div>
