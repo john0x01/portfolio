@@ -7,8 +7,10 @@ import {
   SiReact,
   SiVercel,
 } from '@icons-pack/react-simple-icons'
+import Image from 'next/image'
 import { BentoGrid, BentoGridItem } from './ui/bento-grid'
 import { Button } from './ui/button'
+import { Card } from './ui/card'
 import { InfiniteMovingCards } from './ui/infinite-moving-cards'
 
 export function SkillsGrid() {
@@ -140,17 +142,17 @@ const items = [
       <div className="grid grid-cols-4 w-full min-h-40 relative overflow-hidden text-card">
         <div className="z-20">
           <div className="h-12 p-2">GraphQL</div>
-          <div className="h-12 bg-card"></div>
-          <div className="h-12 bg-card"></div>
+          <div className="h-12 bg-background"></div>
+          <div className="h-12 bg-background"></div>
         </div>
         <div className="col-span-2 z-20">
-          <div className="h-12 bg-card"></div>
+          <div className="h-12 bg-background"></div>
           <div className="h-12 p-2">Design Patterns</div>
-          <div className="h-12 bg-card"></div>
+          <div className="h-12 bg-background"></div>
         </div>
         <div className="z-20">
-          <div className="h-12 bg-card"></div>
-          <div className="h-12 bg-card"></div>
+          <div className="h-12 bg-background"></div>
+          <div className="h-12 bg-background"></div>
           <div className="h-12 p-2">SOLID</div>
         </div>
         <div className="absolute z-10 left-0 top-0 bottom-4 w-0 group-hover/bento:w-full bg-neutral-200 transition-all duration-300" />
@@ -208,6 +210,66 @@ const items = [
     title: 'Desenvolvimento Full-stack',
     description:
       'Como desenvolvedor full-stack, atuo em todas as camadas do desenvolvimento, do front-end ao back-end. Minha proficiência em React, Node.js, Next.js e React Native me permite criar soluções completas que oferecem experiências coesas e facilitam a manutenção.',
-    header: <Skeleton />,
+    header: (
+      <div className="grid grid-cols-3 gap-4 w-full min-h-40 relative bg-dot px-[12%]">
+        <Card className="bg-background rotate-[-5deg] translate-x-4 -translate-y-1 group-hover/bento:rotate-0 group-hover/bento:-translate-x-4 group-hover/bento:-translate-y-0 border-white/5 transition-all duration-200">
+          <div className="flex flex-col gap-4 p-6 items-center w-full">
+            <Image
+              src={'/pfp.jpg'}
+              alt="Profile picture"
+              height={48}
+              width={48}
+              className="rounded-full scale-75 lg:scale-100"
+            />
+            <span className="text-center text-xs md:text-sm font-bold opacity-60">
+              APIs funcionais e Banco de dados
+            </span>
+            <div className="flex items-center justify-center border border-red-600 py-[2px] px-2 rounded-full">
+              <span className="text-[10px] font-bold text-red-600">
+                Back-end
+              </span>
+            </div>
+          </div>
+        </Card>
+        <Card className="bg-background z-10 border-white/5 transition-all duration-200`">
+          <div className="flex flex-col gap-4 p-6 items-center w-full">
+            <Image
+              src={'/pfp.jpg'}
+              alt="Profile picture"
+              height={48}
+              width={48}
+              className="rounded-full scale-75 lg:scale-100"
+            />
+            <span className="text-center text-xs md:text-sm font-bold opacity-60">
+              Interface e Design Atrativos
+            </span>
+            <div className="flex items-center justify-center border border-green-600 py-[2px] px-2 rounded-full">
+              <span className="text-[10px] font-bold text-green-600">
+                Front-end
+              </span>
+            </div>
+          </div>
+        </Card>
+        <Card className="bg-background rotate-[5deg] -translate-x-4 -translate-y-1 group-hover/bento:rotate-0 group-hover/bento:translate-x-4 group-hover/bento:-translate-y-0 border-white/5 transition-all duration-200`">
+          <div className="flex flex-col gap-4 p-6 items-center w-full">
+            <Image
+              src={'/pfp.jpg'}
+              alt="Profile picture"
+              height={48}
+              width={48}
+              className="rounded-full scale-75 lg:scale-100"
+            />
+            <span className="text-center text-xs md:text-sm font-bold opacity-60">
+              Deploy e Monitoramento
+            </span>
+            <div className="flex items-center justify-center border border-yellow-600 py-[2px] px-2 rounded-full">
+              <span className="text-[10px] font-bold text-yellow-600">
+                DevOps
+              </span>
+            </div>
+          </div>
+        </Card>
+      </div>
+    ),
   },
 ]

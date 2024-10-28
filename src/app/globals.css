@@ -41,6 +41,10 @@
   width: 0px !important;
 }
 
+.bg-dot {
+  background-image: url('/bg-dot.svg');
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
