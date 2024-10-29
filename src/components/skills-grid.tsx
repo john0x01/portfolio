@@ -160,7 +160,7 @@ const items = [
       'Minha abordagem em design de UI/UX foca na criação de interfaces que não apenas encantam visualmente, mas também oferecem uma experiência de usuário intuitiva. Com habilidades fortes em prototipagem e wireframing no Figma, sou capaz de transformar requisitos em soluções visuais eficazes, garantindo que cada elemento do design contribua para a usabilidade e acessibilidade.',
     header: (
       <div className="flex items-end justify-center w-full gap-6 min-h-40 relative overflow-hidden bg-dot">
-        <div className="relative group-hover/bento:translate-y-2 transition-all duration-200 h-36 aspect-[12/16] bg-white rounded-xl border-2 border-zinc-500 border-b-0 rounded-b-none overflow-visible">
+        <div className="relative scale-75 origin-bottom translate-x-1/4 md:scale-100 md:translate-x-0 group-hover/bento:translate-y-2 transition-all duration-200 h-36 aspect-[12/16] bg-white rounded-xl border-2 border-zinc-500 border-b-0 rounded-b-none overflow-visible">
           <div className="absolute top-2 left-8 right-8 h-3 rounded-full bg-zinc-200 group-hover/bento:left-2 group-hover/bento:right-2 transition-all duration-300" />
           <div className="flex flex-col gap-2 w-1/2 mx-auto h-full items-center justify-center p-2">
             <h1 className="text-zinc-900 text-[10px] font-bold text-center">
@@ -179,7 +179,7 @@ const items = [
             <Globe size={16} />
           </div>
         </div>
-        <div className="relative group-hover/bento:translate-x-2 transition-all duration-200 h-36 aspect-video bg-neutral-200 rounded-xl border border-b-0 rounded-b-none overflow-visible">
+        <div className="relative scale-75 origin-bottom md:scale-100 group-hover/bento:translate-x-2 transition-all duration-200 h-36 aspect-video bg-neutral-200 rounded-xl border border-b-0 rounded-b-none overflow-visible">
           <div className="w-full flex items-center gap-1 bg-neutral-500 p-1 px-2 rounded-t-2xl">
             <div className="bg-neutral-400 h-1 w-1 rounded-full" />
             <div className="bg-neutral-400 h-1 w-1 rounded-full" />
@@ -267,9 +267,9 @@ const items = [
     description:
       'Como desenvolvedor full-stack, atuo em todas as camadas do desenvolvimento, do front-end ao back-end. Minha proficiência em React, Node.js, Next.js e React Native me permite criar soluções completas que oferecem experiências coesas e facilitam a manutenção.',
     header: (
-      <div className="grid grid-cols-3 gap-4 w-full min-h-40 relative bg-dot px-[12%]">
+      <div className="grid grid-cols-3 md:gap-4 w-full min-h-40 relative bg-dot px-4 md:px-[12%]">
         <Card className="bg-background rotate-[-5deg] translate-x-4 -translate-y-1 group-hover/bento:rotate-0 group-hover/bento:-translate-x-4 group-hover/bento:-translate-y-0 rounded-xl transition-all duration-200">
-          <div className="flex flex-col gap-4 p-6 items-center w-full">
+          <div className="flex flex-col gap-4 p-4 md:p-6 items-center w-full">
             <Image
               src={'/pfp.jpg'}
               alt="Profile picture"
@@ -281,14 +281,14 @@ const items = [
               APIs funcionais e Banco de dados
             </span>
             <div className="flex items-center justify-center border border-red-600 py-[2px] px-2 rounded-full">
-              <span className="text-[10px] font-bold text-red-600">
+              <span className="text-[8px] md:text-[10px] font-bold text-red-600">
                 Back-end
               </span>
             </div>
           </div>
         </Card>
         <Card className="bg-background z-10 rounded-xl transition-all duration-200`">
-          <div className="flex flex-col gap-4 p-6 items-center w-full">
+          <div className="flex flex-col gap-4 p-4 md:p-6 items-center w-full">
             <Image
               src={'/pfp.jpg'}
               alt="Profile picture"
@@ -300,14 +300,14 @@ const items = [
               Interface e Design Atrativos
             </span>
             <div className="flex items-center justify-center border border-green-600 py-[2px] px-2 rounded-full">
-              <span className="text-[10px] font-bold text-green-600">
+              <span className="text-[8px] md:text-[10px] font-bold text-green-600">
                 Front-end
               </span>
             </div>
           </div>
         </Card>
         <Card className="bg-background rotate-[5deg] -translate-x-4 -translate-y-1 group-hover/bento:rotate-0 group-hover/bento:translate-x-4 group-hover/bento:-translate-y-0 rounded-xl transition-all duration-200`">
-          <div className="flex flex-col gap-4 p-6 items-center w-full">
+          <div className="flex flex-col gap-4 p-4 md:p-6 items-center w-full">
             <Image
               src={'/pfp.jpg'}
               alt="Profile picture"
@@ -319,7 +319,7 @@ const items = [
               Deploy e Monitoramento
             </span>
             <div className="flex items-center justify-center border border-yellow-600 py-[2px] px-2 rounded-full">
-              <span className="text-[10px] font-bold text-yellow-600">
+              <span className="text-[8px] md:text-[10px] font-bold text-yellow-600">
                 DevOps
               </span>
             </div>
