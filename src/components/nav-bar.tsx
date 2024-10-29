@@ -34,7 +34,7 @@ export function NavBar({ language = 'pt' }: { language?: string }) {
   }
 
   useMotionValueEvent(scrollYProgress, 'change', () => {
-    if (scrollYProgress.get() < 0.05) {
+    if (scrollYProgress.get() < 0.04) {
       setScrolled(false)
     } else {
       setScrolled(true)
@@ -53,10 +53,10 @@ export function NavBar({ language = 'pt' }: { language?: string }) {
             y: 0,
             paddingLeft: scrolled ? 32 : 0,
             paddingRight: scrolled ? 32 : 0,
-            backgroundColor: scrolled ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
-            backdropFilter: scrolled ? 'blur(80px)' : '',
+            background: scrolled ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
           }}
           style={{
+            backdropFilter: 'blur(80px)',
             borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.15)' : '',
           }}
           transition={{
