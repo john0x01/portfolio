@@ -145,7 +145,6 @@ function Cards({ filter }: { filter: string }) {
 }
 
 export function Projects() {
-  console.log('rendering projects')
   return (
     <Tabs defaultValue="featured" className="w-full flex flex-col items-center">
       <TabsList className="hidden lg:grid grid-cols-5 w-full bg-transparent h-fit">
