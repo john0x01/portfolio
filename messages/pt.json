@@ -1,0 +1,178 @@
+{
+  "metadata": {
+    "title": "João Rocha | Desenvolvedor Full-stack",
+    "description": "Contrate um desenvolvedor full-stack para seu projeto. Portfólio Online"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projetos",
+    "skills": "Skills",
+    "about": "Sobre",
+    "cta": "Me contrate agora",
+    "ctaShort": "Contratar"
+  },
+  "home": {
+    "headlinePrefix": "Contrate um desenvolvedor",
+    "headlineSuffix": "",
+    "flipWords": ["full-stack", "experiente", "proativo"],
+    "tagline": "Meu nome é João Rocha e eu posso ajudar sua empresa a lucrar mais com software.",
+    "downloadCV": "Baixar CV",
+    "hireCta": "🔥 Me contrate agora",
+    "ratingsLabel": "Em avaliações de diversos clientes"
+  },
+  "projects": {
+    "title": "Meus Projetos",
+    "tabs": {
+      "featured": "Destaques",
+      "saas": "SaaS",
+      "apps": "Apps",
+      "websites": "Websites",
+      "dashboards": "Dashboards"
+    },
+    "items": {
+      "corelli": {
+        "service": "UI Design",
+        "description": "Plataforma de CRM projetada para otimizar a gestão empresarial."
+      },
+      "bookingGpt": {
+        "service": "Desenvolvimento",
+        "description": "Bot de agendamento no WhatsApp feito utilizando modelo da OpenAI"
+      },
+      "centralCaverna": {
+        "service": "Desenvolvimento Mobile",
+        "description": "Aplicativo de produtividade e controle de diversas áreas."
+      },
+      "solusVisitas": {
+        "service": "Desenvolvimento Mobile & UI",
+        "description": "Aplicativo voltado a criação e vistoria de laudos no agronegócio."
+      },
+      "burgerDelivery": {
+        "service": "UI Design",
+        "description": "Aplicativo de delivery para hamburgueria."
+      },
+      "hivePay": {
+        "service": "UI Design",
+        "description": "Plataforma de pagamentos e checkout."
+      }
+    }
+  },
+  "skills": {
+    "title": "Minhas Skills",
+    "mainTechs": "Principais tecnologias",
+    "items": {
+      "web": {
+        "title": "Desenvolvimento Web",
+        "description": "Sou especialista em desenvolvimento web, criando aplicações interativas e responsivas. Utilizo React.js e Next.js para desenvolver interfaces modernas, proporcionando experiências fluidas e intuitivas, com foco em acessibilidade e desempenho.",
+        "headline": "Aplicações web que se",
+        "headlineHighlight": "destacam",
+        "ctaPrimary": "Conhecer",
+        "ctaSecondary": "Ver mais"
+      },
+      "mobile": {
+        "title": "Desenvolvimento Mobile",
+        "description": "Com experiência em desenvolvimento mobile, crio aplicativos robustos com React Native. Utilizando React Native e Expo, desenvolvo interfaces fluidas e de alta performance para Android e iOS."
+      },
+      "apis": {
+        "title": "APIs e RESTful",
+        "description": "Tenho forte entendimento na construção de APIs RESTful, permitindo comunicação eficiente entre sistemas. Utilizo Node.js e Express para criar APIs escaláveis, assegurando segurança e eficiência nas interações de dados."
+      },
+      "uiux": {
+        "title": "Design de UI/UX",
+        "description": "Minha abordagem em design de UI/UX foca na criação de interfaces que não apenas encantam visualmente, mas também oferecem uma experiência de usuário intuitiva. Com habilidades fortes em prototipagem e wireframing no Figma, sou capaz de transformar requisitos em soluções visuais eficazes, garantindo que cada elemento do design contribua para a usabilidade e acessibilidade.",
+        "landingHeadline": "Landing Pages que convertem",
+        "ctaBuy": "Comprar Agora",
+        "wireframe": "Wireframing, Prototipação e Experiência de Usuário"
+      },
+      "database": {
+        "title": "Banco de Dados",
+        "description": "Possuo experiência em gerenciamento de dados, utilizando bancos de dados relacionais SQL e NoSQL. Estou familiarizado com modelagem e otimização de consultas, garantindo eficiência no armazenamento e recuperação de informações."
+      },
+      "devops": {
+        "title": "DevOps",
+        "description": "Minha experiência em DevOps envolve automatizar o desenvolvimento e entrega de software. Utilizo serviços da AWS e servidores Nginx para implementar soluções de hospedagem e integração contínua, garantindo agilidade na entrega."
+      },
+      "fullstack": {
+        "title": "Desenvolvimento Full-stack",
+        "description": "Como desenvolvedor full-stack, atuo em todas as camadas do desenvolvimento, do front-end ao back-end. Minha proficiência em React, Node.js, Next.js e React Native me permite criar soluções completas que oferecem experiências coesas e facilitam a manutenção.",
+        "backendCard": "APIs funcionais e Banco de dados",
+        "frontendCard": "Interface e Design Atrativos",
+        "devopsCard": "Deploy e Monitoramento"
+      }
+    }
+  },
+  "about": {
+    "title": "Sobre mim",
+    "p1": "Sou um programador e entusiasta da tecnologia, do marketing e empreendedorismo. Trabalhei nos últimos dois anos como programador, sendo o primeiro como Desenvolvedor Front-end e o segundo ampliando meu conhecimento como Desenvolvedor Full-stack. Atuei por mais de um ano em uma startup da minha cidade e hoje tenho trabalhado como freelancer, entregando ótimos resultados e me aprimorando todo dia. Minha especialidade inclui React, NextJS, Node, Typescript, React Native e SQL.",
+    "p2": "Além do trabalho convencional, estou investindo também na criação de conteúdo da área tech no Instagram e YouTube, a fim de agregar valor na vida das pessoas e formar mais profissionais como eu.",
+    "downloadCV": "Baixar CV"
+  },
+  "career": {
+    "title": "Carreira",
+    "items": {
+      "mobileSideral": {
+        "title": "Desenvolvedor Mobile",
+        "info": "📅 Julho 2024 - Presente • Grupo Sideral",
+        "responsibilities": ["Desenvolvimento Mobile", "React Native", "APIs", "Armazenamento off-line"],
+        "description": "Responsável pelo desenvolvimento mobile do SaaS \"Central Caverna\", app de produtividade voltado ao desenvolvimento pessoal. Principais funcionalidades: Cadastro de checklists, lembretes, tarefas, compromissos, integração com calendário e API, armazenamento off-line e salvamento de autenticação.\nStacks utilizadas: React Native, Expo, React Hook Forms, Tamagui, React Native Reanimated, MMKV"
+      },
+      "freelanceFull": {
+        "title": "Desenvolvedor Full-stack",
+        "info": "📅 Abril 2024 - Presente • Freelance",
+        "responsibilities": ["Aplicações Completas", "SaaS", "Aplicativos", "Landing Pages"],
+        "description": "Realizei projetos de SaaS e Landing Pages com NextJs e Aplicativos Mobile para diversos clientes, sendo em vezes responsável pelo UI/UX, outras vezes pela integração com o sistema existente e outras vezes por todas as etapas até o deploy.\nStacks utilizadas: ReactJS, Node.js, NextJs, React Native, Tailwind, SQL, AWS, Nginx, NoSQL"
+      },
+      "mobileSolus": {
+        "title": "Desenvolvedor Mobile",
+        "info": "📅 Agosto 2024 - Outubro 2023 • Solus Sistema",
+        "responsibilities": ["Desenvolvimento Mobile", "UI/UX", "APIs"],
+        "description": "Responsável pelo UI e desenvolvimento do applicativo \"Solus Laudos\", app voltado ao nicho do agronegócio.\nPrincipais funcionalidades: Emissão de laudos sobre plantações, safras e colheitas, cadastro, edição e exclusão off-line de dados, salvamento de imagens e sincronização com API.\nStacks utilizadas: React Native, Expo, React Hook Forms, Tamagui, React Native Reanimated, MMKV"
+      },
+      "smartnew": {
+        "title": "Desenvolvedor Full-stack Jr.",
+        "info": "📅 Março 2023 - Abril 2024 • SmartNew Sistemas",
+        "responsibilities": ["Desenvolvimento Web", "Desenvolvimento Mobile", "UI/UX", "DevOps"],
+        "description": "Responsável pelo desenvolvimento de telas, dashboards, APIs integrando o SaaS da empresa\nResponsável pelo design e desenvolvimento de dois aplicativos mobile, sendo um para uso interno e outro sob demanda para outra empresa.\nStacks utilizadas: ReactJS, Node.js, NextJs, React Native, Tailwind, SQL, Nginx, Python, Flask"
+      },
+      "freelanceFront": {
+        "title": "Desenvolvedor Frontend",
+        "info": "📅 Dezembro 2022 - Março 2023 • Freelance",
+        "responsibilities": ["Sites em WordPress", "UIs no Figma", "HTML", "React"],
+        "description": "Realizei projetos e páginas com HTML, CSS, JS e ReactJS"
+      }
+    }
+  },
+  "contact": {
+    "tags": {
+      "frontend": "Front-end",
+      "backend": "Back-end",
+      "mobile": "Mobile",
+      "uiux": "UI/UX"
+    },
+    "pitch": "De designs e prototipação de wireframes até o desenvolvimento de aplicações de grande porte, minha especialidade é entregar resultados e agregar valor com cada linha de código que eu escrevo. Estou interessado em utilizar minhas habilidades em trabalhos fixos e contratos de freelance, o resultado eu garanto. Entre em contato para construirmos seu próximo SaaS, Aplicativo ou site.",
+    "cta": "🔥 Quero te contratar agora",
+    "form": {
+      "title": "Pedido para trabalhar com João Rocha",
+      "description": "João receberá sua mensagem e entrará em contato",
+      "successTitle": "Mensagem enviada com sucesso",
+      "successDescription": "Em breve João lerá sua mensagem e entrará em contato",
+      "doneTitle": "Tudo Certo",
+      "doneSubtitle": "Você já pode fechar essa tela",
+      "name": "Nome",
+      "namePlaceholder": "Escreva seu nome...",
+      "cellphone": "Celular",
+      "email": "E-mail",
+      "emailPlaceholder": "seuemail@exemplo.com",
+      "message": "Mensagem",
+      "messagePlaceholder": "Olá João! Estou entrando em contato...",
+      "cancel": "Cancelar",
+      "next": "Próximo",
+      "close": "Fechar",
+      "errors": {
+        "required": "Obrigatório",
+        "invalidPhone": "Número inválido",
+        "invalidEmail": "Por favor, insira um e-mail válido",
+        "submitFailed": "Não foi possível enviar os dados do formulário"
+      }
+    }
+  }
+}

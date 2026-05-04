@@ -1,0 +1,178 @@
+{
+  "metadata": {
+    "title": "João Rocha | Full-stack Developer",
+    "description": "Hire a full-stack developer for your project. Online Portfolio"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "skills": "Skills",
+    "about": "About",
+    "cta": "Hire me now",
+    "ctaShort": "Hire"
+  },
+  "home": {
+    "headlinePrefix": "Hello! I am a",
+    "headlineSuffix": "developer",
+    "flipWords": ["full-stack", "mobile", "proactive"],
+    "tagline": "My name is João Rocha and I can help your company to grow with software.",
+    "downloadCV": "Download CV",
+    "hireCta": "🔥 Hire me now",
+    "ratingsLabel": "In many clients reviews"
+  },
+  "projects": {
+    "title": "My Projects",
+    "tabs": {
+      "featured": "Featured",
+      "saas": "SaaS",
+      "apps": "Apps",
+      "websites": "Websites",
+      "dashboards": "Dashboards"
+    },
+    "items": {
+      "corelli": {
+        "service": "UI Design",
+        "description": "CRM platform designed to streamline business management."
+      },
+      "bookingGpt": {
+        "service": "Development",
+        "description": "WhatsApp scheduling bot built using OpenAI's model"
+      },
+      "centralCaverna": {
+        "service": "Mobile Development",
+        "description": "Productivity app for managing multiple areas of life."
+      },
+      "solusVisitas": {
+        "service": "Mobile Development & UI",
+        "description": "App for creating and inspecting reports in agribusiness."
+      },
+      "burgerDelivery": {
+        "service": "UI Design",
+        "description": "Delivery app for a burger restaurant."
+      },
+      "hivePay": {
+        "service": "UI Design",
+        "description": "Payments and checkout platform."
+      }
+    }
+  },
+  "skills": {
+    "title": "My Skills",
+    "mainTechs": "Main technologies",
+    "items": {
+      "web": {
+        "title": "Web Development",
+        "description": "I specialize in web development, building interactive and responsive applications. I use React.js and Next.js to develop modern interfaces, delivering smooth and intuitive experiences with a focus on accessibility and performance.",
+        "headline": "Web apps that",
+        "headlineHighlight": "stand out",
+        "ctaPrimary": "Discover",
+        "ctaSecondary": "See more"
+      },
+      "mobile": {
+        "title": "Mobile Development",
+        "description": "With experience in mobile development, I build robust apps with React Native. Using React Native and Expo, I deliver smooth, high-performance interfaces for Android and iOS."
+      },
+      "apis": {
+        "title": "APIs and RESTful",
+        "description": "I have a strong understanding of building RESTful APIs, enabling efficient communication between systems. I use Node.js and Express to build scalable APIs, ensuring security and efficiency in data interactions."
+      },
+      "uiux": {
+        "title": "UI/UX Design",
+        "description": "My approach to UI/UX design focuses on creating interfaces that are not only visually delightful but also offer an intuitive user experience. With strong skills in prototyping and wireframing in Figma, I turn requirements into effective visual solutions, ensuring every design element contributes to usability and accessibility.",
+        "landingHeadline": "Landing Pages that convert",
+        "ctaBuy": "Buy Now",
+        "wireframe": "Wireframing, Prototyping and User Experience"
+      },
+      "database": {
+        "title": "Databases",
+        "description": "I have experience in data management, working with relational SQL and NoSQL databases. I'm familiar with modeling and query optimization, ensuring efficiency in storing and retrieving information."
+      },
+      "devops": {
+        "title": "DevOps",
+        "description": "My experience with DevOps involves automating software development and delivery. I use AWS services and Nginx servers to implement hosting solutions and continuous integration, ensuring agile delivery."
+      },
+      "fullstack": {
+        "title": "Full-stack Development",
+        "description": "As a full-stack developer, I work across all layers of development, from front-end to back-end. My proficiency in React, Node.js, Next.js and React Native allows me to deliver complete solutions that provide cohesive experiences and ease maintenance.",
+        "backendCard": "Functional APIs and Database",
+        "frontendCard": "Attractive Interface and Design",
+        "devopsCard": "Deploy and Monitoring"
+      }
+    }
+  },
+  "about": {
+    "title": "About me",
+    "p1": "I am a programmer and enthusiast of technology, marketing and entrepreneurship. I worked for the last two years as a programmer, the first as a Front-end Developer and the second expanding my knowledge as a Full-stack Developer. I worked for over a year at a startup in my city and today I work as a freelancer, delivering great results and improving myself every day. My specialty includes React, NextJS, Node, Typescript, React Native and SQL.",
+    "p2": "Beyond conventional work, I am also investing in creating tech content on Instagram and YouTube, in order to add value to people's lives and train more professionals like me.",
+    "downloadCV": "Download CV"
+  },
+  "career": {
+    "title": "Career",
+    "items": {
+      "mobileSideral": {
+        "title": "Mobile Developer",
+        "info": "📅 July 2024 - Present • Grupo Sideral",
+        "responsibilities": ["Mobile Development", "React Native", "APIs", "Offline storage"],
+        "description": "Responsible for mobile development of the SaaS \"Central Caverna\", a productivity app focused on personal development. Main features: checklists, reminders, tasks, appointments, calendar and API integration, offline storage and saved authentication.\nStack: React Native, Expo, React Hook Forms, Tamagui, React Native Reanimated, MMKV"
+      },
+      "freelanceFull": {
+        "title": "Full-stack Developer",
+        "info": "📅 April 2024 - Present • Freelance",
+        "responsibilities": ["Complete Applications", "SaaS", "Apps", "Landing Pages"],
+        "description": "Built SaaS projects and Landing Pages with NextJs and Mobile Apps for various clients, sometimes owning UI/UX, other times integration with existing systems, and other times every step through deploy.\nStack: ReactJS, Node.js, NextJs, React Native, Tailwind, SQL, AWS, Nginx, NoSQL"
+      },
+      "mobileSolus": {
+        "title": "Mobile Developer",
+        "info": "📅 August 2024 - October 2023 • Solus Sistema",
+        "responsibilities": ["Mobile Development", "UI/UX", "APIs"],
+        "description": "Responsible for the UI and development of the \"Solus Laudos\" app, focused on the agribusiness niche.\nMain features: issuing reports on crops, harvests, offline create/edit/delete of data, image saving and API sync.\nStack: React Native, Expo, React Hook Forms, Tamagui, React Native Reanimated, MMKV"
+      },
+      "smartnew": {
+        "title": "Full-stack Developer Jr.",
+        "info": "📅 March 2023 - April 2024 • SmartNew Sistemas",
+        "responsibilities": ["Web Development", "Mobile Development", "UI/UX", "DevOps"],
+        "description": "Responsible for developing screens, dashboards and APIs integrating the company's SaaS.\nResponsible for designing and developing two mobile apps — one for internal use and another on demand for another company.\nStack: ReactJS, Node.js, NextJs, React Native, Tailwind, SQL, Nginx, Python, Flask"
+      },
+      "freelanceFront": {
+        "title": "Frontend Developer",
+        "info": "📅 December 2022 - March 2023 • Freelance",
+        "responsibilities": ["WordPress sites", "Figma UIs", "HTML", "React"],
+        "description": "Built projects and pages with HTML, CSS, JS and ReactJS"
+      }
+    }
+  },
+  "contact": {
+    "tags": {
+      "frontend": "Front-end",
+      "backend": "Back-end",
+      "mobile": "Mobile",
+      "uiux": "UI/UX"
+    },
+    "pitch": "From design and wireframe prototyping to the development of large-scale applications, my specialty is delivering results and adding value with every line of code I write. I'm interested in using my skills on full-time and freelance contracts — I guarantee the result. Get in touch and let's build your next SaaS, App or site.",
+    "cta": "🔥 I want to hire you now",
+    "form": {
+      "title": "Request to work with João Rocha",
+      "description": "João will receive your message and get in touch",
+      "successTitle": "Message sent successfully",
+      "successDescription": "João will read your message and get in touch shortly",
+      "doneTitle": "All set",
+      "doneSubtitle": "You can now close this screen",
+      "name": "Name",
+      "namePlaceholder": "Type your name...",
+      "cellphone": "Phone",
+      "email": "E-mail",
+      "emailPlaceholder": "youremail@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Hi João! I'm reaching out...",
+      "cancel": "Cancel",
+      "next": "Next",
+      "close": "Close",
+      "errors": {
+        "required": "Required",
+        "invalidPhone": "Invalid number",
+        "invalidEmail": "Please enter a valid email",
+        "submitFailed": "Could not submit the form data"
+      }
+    }
+  }
+}
