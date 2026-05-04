@@ -2,17 +2,82 @@
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { Animate } from './ui/animate'
 import { Button } from './ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs'
 
+type ProjectItem = {
+  id: string
+  title: string
+  src: string
+  tags: string[]
+  href: string
+  service: string
+  description: string
+}
+
+const projectsData: Omit<ProjectItem, 'service' | 'description'>[] = [
+  {
+    id: 'corelli',
+    title: 'Corelli',
+    src: '/projects/corelli-cover.png',
+    tags: ['featured', 'dashboards', 'websites'],
+    href: '/projects/corelli',
+  },
+  {
+    id: 'bookingGpt',
+    title: 'Booking GPT',
+    src: '/projects/booking-gpt-cover.png',
+    tags: ['featured', 'saas'],
+    href: '/projects/corelli',
+  },
+  {
+    id: 'centralCaverna',
+    title: 'Central Caverna',
+    src: '/projects/central-caverna-cover.png',
+    tags: ['featured', 'apps'],
+    href: '/projects/corelli',
+  },
+  {
+    id: 'solusVisitas',
+    title: 'Solus Visitas',
+    src: '/projects/solus-visitas-cover.png',
+    tags: ['featured', 'apps'],
+    href: '/projects/corelli',
+  },
+  {
+    id: 'burgerDelivery',
+    title: 'Burger Delivery',
+    src: '/projects/delivery-cover.png',
+    tags: ['apps'],
+    href: '/projects/corelli',
+  },
+  {
+    id: 'hivePay',
+    title: 'Hive Pay',
+    src: '/projects/hivepay-cover.png',
+    tags: ['websites', 'dashboards'],
+    href: '/projects/corelli',
+  },
+]
+
+function useProjects(): ProjectItem[] {
+  const t = useTranslations('projects.items')
+  return projectsData.map((p) => ({
+    ...p,
+    service: t(`${p.id}.service`),
+    description: t(`${p.id}.description`),
+  }))
+}
+
 function Card({
   item,
   className = '',
 }: {
-  item: (typeof data)[number]
+  item: ProjectItem
   className?: string
 }) {
   return (
@@ -41,16 +106,12 @@ function Card({
         <p className="text-sm opacity-60 group-hover/card:translate-x-4 transition-all duration-300">
           {item.description}
         </p>
-        {/* <ArrowUpRight
-          size={32}
-          className="absolute right-2 bottom-4 opacity-0 -rotate-180 -translate-x-full group-hover/card:translate-x-0 group-hover/card:rotate-0 group-hover/card:opacity-100 transition-all duration-300"
-        /> */}
       </div>
     </div>
   )
 }
 
-function Carousel() {
+function Carousel({ items }: { items: ProjectItem[] }) {
   const carouselRef = React.useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
@@ -82,7 +143,7 @@ function Carousel() {
         ref={carouselRef}
         onScroll={checkCanScroll}
       >
-        {data.map((item, index) => (
+        {items.map((item, index) => (
           <motion.div
             initial={{
               opacity: 0,
@@ -112,7 +173,6 @@ function Carousel() {
           variant="outline"
           onClick={scrollLeft}
           disabled={!canScrollLeft}
-          // onClick={() => setIndex((index - 1 + data.length) % data.length)}
         >
           <ArrowLeft />
         </Button>
@@ -121,7 +181,6 @@ function Carousel() {
           variant="outline"
           onClick={scrollRight}
           disabled={!canScrollRight}
-          // onClick={() => setIndex((index + 1) % data.length)}
         >
           <ArrowRight />
         </Button>
@@ -130,10 +189,10 @@ function Carousel() {
   )
 }
 
-function Cards({ filter }: { filter: string }) {
+function Cards({ items, filter }: { items: ProjectItem[]; filter: string }) {
   return (
     <div className="hidden lg:grid lg:grid-cols-4">
-      {data
+      {items
         .filter((item) => item.tags.includes(filter))
         .map((item, index) => (
           <Animate key={item.title + index} fromY={40} once={false}>
@@ -145,125 +204,42 @@ function Cards({ filter }: { filter: string }) {
 }
 
 export function Projects() {
+  const t = useTranslations('projects.tabs')
+  const items = useProjects()
+  const tabs = ['featured', 'saas', 'apps', 'websites', 'dashboards'] as const
+
   return (
     <Tabs defaultValue="featured" className="w-full flex flex-col items-center">
       <TabsList className="hidden lg:grid grid-cols-5 w-full bg-transparent h-fit">
-        <TabsTrigger
-          className="border border-border/50 py-4 data-[state=active]:bg-white data-[state=active]:text-black text-sm sm:md-base group relative overflow-hidden"
-          value="featured"
-        >
-          <span className="group-hover:-translate-y-1 transition-all duration-200">
-            Destaques
-          </span>
-          <div className="absolute h-[1px] left-0 -bottom-2 right-0 bg-white group-hover:-translate-y-2 transition-all duration-200" />
-        </TabsTrigger>
-        <TabsTrigger
-          className="border border-border/50 py-4 data-[state=active]:bg-white data-[state=active]:text-black text-sm sm:md-base group relative overflow-hidden"
-          value="saas"
-        >
-          <span className="group-hover:-translate-y-1 transition-all duration-200">
-            SaaS
-          </span>
-          <div className="absolute h-[1px] left-0 -bottom-2 right-0 bg-white group-hover:-translate-y-2 transition-all duration-200" />
-        </TabsTrigger>
-        <TabsTrigger
-          className="border border-border/50 py-4 data-[state=active]:bg-white data-[state=active]:text-black text-sm sm:md-base group relative overflow-hidden"
-          value="apps"
-        >
-          <span className="group-hover:-translate-y-1 transition-all duration-200">
-            Apps
-          </span>
-          <div className="absolute h-[1px] left-0 -bottom-2 right-0 bg-white group-hover:-translate-y-2 transition-all duration-200" />
-        </TabsTrigger>
-        <TabsTrigger
-          className="border border-border/50 py-4 data-[state=active]:bg-white data-[state=active]:text-black text-sm sm:md-base group relative overflow-hidden"
-          value="websites"
-        >
-          <span className="group-hover:-translate-y-1 transition-all duration-200">
-            Websites
-          </span>
-          <div className="absolute h-[1px] left-0 -bottom-2 right-0 bg-white group-hover:-translate-y-2 transition-all duration-200" />
-        </TabsTrigger>
-        <TabsTrigger
-          className="border border-border/50 py-4 data-[state=active]:bg-white data-[state=active]:text-black text-sm sm:md-base group relative overflow-hidden"
-          value="dashboards"
-        >
-          <span className="group-hover:-translate-y-1 transition-all duration-200">
-            Dashboards
-          </span>
-          <div className="absolute h-[1px] left-0 -bottom-2 right-0 bg-white group-hover:-translate-y-2 transition-all duration-200" />
-        </TabsTrigger>
+        {tabs.map((tab) => (
+          <TabsTrigger
+            key={tab}
+            className="border border-border/50 py-4 data-[state=active]:bg-white data-[state=active]:text-black text-sm sm:md-base group relative overflow-hidden"
+            value={tab}
+          >
+            <span className="group-hover:-translate-y-1 transition-all duration-200">
+              {t(tab)}
+            </span>
+            <div className="absolute h-[1px] left-0 -bottom-2 right-0 bg-white group-hover:-translate-y-2 transition-all duration-200" />
+          </TabsTrigger>
+        ))}
       </TabsList>
       <TabsContent className="w-full" value="featured">
-        <Cards filter="featured" />
-        <Carousel />
+        <Cards items={items} filter="featured" />
+        <Carousel items={items} />
       </TabsContent>
       <TabsContent className="w-full" value="saas">
-        <Cards filter="saas" />
+        <Cards items={items} filter="saas" />
       </TabsContent>
       <TabsContent className="w-full" value="apps">
-        <Cards filter="apps" />
+        <Cards items={items} filter="apps" />
       </TabsContent>
       <TabsContent className="w-full" value="websites">
-        <Cards filter="websites" />
+        <Cards items={items} filter="websites" />
       </TabsContent>
       <TabsContent className="w-full" value="dashboards">
-        <Cards filter="dashboards" />
+        <Cards items={items} filter="dashboards" />
       </TabsContent>
     </Tabs>
   )
 }
-
-const data = [
-  {
-    title: 'Corelli',
-    src: '/projects/corelli-cover.png',
-    tags: ['featured', 'dashboards', 'websites'],
-    href: '/projects/corelli',
-    service: 'UI Design',
-    description:
-      'Plataforma de CRM projetada para otimizar a gestão empresarial.',
-  },
-  {
-    title: 'Booking GPT',
-    src: '/projects/booking-gpt-cover.png',
-    tags: ['featured', 'saas'],
-    href: '/projects/corelli',
-    description:
-      'Bot de agendamento no WhatsApp feito utilizando modelo da OpenAI',
-    service: 'Desenvolvimento',
-  },
-  {
-    title: 'Central Caverna',
-    src: '/projects/central-caverna-cover.png',
-    tags: ['featured', 'apps'],
-    href: '/projects/corelli',
-    description: 'Aplicativo de produtividade e controle de diversas áreas.',
-    service: 'Desenvolvimento Mobile',
-  },
-  {
-    title: 'Solus Visitas',
-    src: '/projects/solus-visitas-cover.png',
-    tags: ['featured', 'apps'],
-    href: '/projects/corelli',
-    description:
-      'Aplicativo voltado a criação e vistoria de laudos no agronegócio.',
-    service: 'Desenvolvimento Mobile & UI',
-  },
-  {
-    title: 'Burger Delivery',
-    src: '/projects/delivery-cover.png',
-    tags: ['apps'],
-    href: '/projects/corelli',
-    description: 'Aplicativo de delivery para hamburgueria.',
-    service: 'UI Design',
-  },
-  {
-    title: 'Hive Pay',
-    src: '/projects/hivepay-cover.png',
-    tags: ['websites', 'dashboards'],
-    href: '/projects/corelli',
-    description: 'Plataforma de pagamentos e checkout.',
-    service: 'UI Design',
-  },
-]
