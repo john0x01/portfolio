@@ -6,6 +6,7 @@ import {
   useScroll,
 } from 'framer-motion'
 import { AlignRight } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ReactNode, useState } from 'react'
@@ -24,7 +25,8 @@ function NavLink({ href, children }: { href: string; children: ReactNode }) {
   )
 }
 
-export function NavBar({ language = 'pt' }: { language?: string }) {
+export function NavBar() {
+  const t = useTranslations('nav')
   const { scrollYProgress } = useScroll()
   const [scrolled, setScrolled] = useState(false)
   const [sheetOpen, setSheetOpen] = useState(false)
@@ -84,10 +86,10 @@ export function NavBar({ language = 'pt' }: { language?: string }) {
               )}
             </div>
             <div className="hidden lg:flex items-center gap-6">
-              <NavLink href="#home">{languages[language].home}</NavLink>
-              <NavLink href="#projects">{languages[language].projects}</NavLink>
-              <NavLink href="#skills">{languages[language].skills}</NavLink>
-              <NavLink href="#about">{languages[language].about}</NavLink>
+              <NavLink href="#home">{t('home')}</NavLink>
+              <NavLink href="#projects">{t('projects')}</NavLink>
+              <NavLink href="#skills">{t('skills')}</NavLink>
+              <NavLink href="#about">{t('about')}</NavLink>
             </div>
             <div className="flex items-center gap-4">
               <motion.div
@@ -103,17 +105,11 @@ export function NavBar({ language = 'pt' }: { language?: string }) {
                   duration: 0.5,
                 }}
               >
-                <FlagSelect
-                  defaultFlag={language === 'pt' ? 'brazil' : 'usa'}
-                />
+                <FlagSelect />
               </motion.div>
               <Link href="#contact">
-                <Button className="hidden sm:block">
-                  🔥 {languages[language].cta}
-                </Button>
-                <Button className="sm:hidden">
-                  {languages[language].ctaShort}
-                </Button>
+                <Button className="hidden sm:block">🔥 {t('cta')}</Button>
+                <Button className="sm:hidden">{t('ctaShort')}</Button>
               </Link>
               <Button
                 variant="ghost"
@@ -149,63 +145,35 @@ export function NavBar({ language = 'pt' }: { language?: string }) {
             href="#home"
             className="text-xl sm:text-2xl"
           >
-            {languages[language].home}
+            {t('home')}
           </Link>
           <Link
             onClick={handleToggleSheet}
             href="#projects"
             className="text-xl sm:text-2xl"
           >
-            {languages[language].projects}
+            {t('projects')}
           </Link>
           <Link
             onClick={handleToggleSheet}
             href="#skills"
             className="text-xl sm:text-2xl"
           >
-            {languages[language].skills}
+            {t('skills')}
           </Link>
           <Link
             onClick={handleToggleSheet}
             href="#about"
             className="text-xl sm:text-2xl"
           >
-            {languages[language].about}
+            {t('about')}
           </Link>
           <FlagSelect mobile />
           <Link onClick={handleToggleSheet} href="#contact">
-            <Button>🔥 {languages[language].cta}</Button>
+            <Button>🔥 {t('cta')}</Button>
           </Link>
         </SheetContent>
       </Sheet>
     </>
   )
-}
-
-const languages = {
-  pt: {
-    home: 'Home',
-    projects: 'Projetos',
-    skills: 'Skills',
-    about: 'Sobre',
-    cta: 'Me contrate agora',
-    ctaShort: 'Contratar',
-  },
-  en: {
-    home: 'Home',
-    projects: 'Projects',
-    skills: 'Skills',
-    about: 'About',
-    cta: 'Hire me now',
-    ctaShort: 'Hire',
-  },
-} as {
-  [key: string]: {
-    home: string
-    projects: string
-    skills: string
-    about: string
-    cta: string
-    ctaShort: string
-  }
 }
