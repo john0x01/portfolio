@@ -4,7 +4,8 @@ import * as formSpree from '@formspree/react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { motion } from 'framer-motion'
 import { CheckCircle } from 'lucide-react'
-import { PropsWithChildren, useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
+import { PropsWithChildren, useEffect, useMemo, useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
@@ -23,28 +24,42 @@ import { Input } from './ui/input'
 import { Label } from './ui/label'
 import { Textarea } from './ui/textarea'
 
-const formSchema = z.object({
-  name: z.string({ required_error: 'Obrigatório' }),
-  cellphone: z
-    .string({ required_error: 'Obrigatório' })
-    .regex(/^\([1-9]{2}\) (?:[2-8]|9[0-9])[0-9]{3}-[0-9]{4}$/, {
-      message: 'Número inválido',
-    }),
-  email: z
-    .string({ required_error: 'Obrigatório' })
-    .regex(
-      /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
-      'Por favor, insira um e-mail válido',
-    ),
-  message: z.string({ required_error: 'Obrigatório' }),
-})
+function buildSchema(messages: {
+  required: string
+  invalidPhone: string
+  invalidEmail: string
+}) {
+  return z.object({
+    name: z.string({ required_error: messages.required }),
+    cellphone: z
+      .string({ required_error: messages.required })
+      .regex(/^\([1-9]{2}\) (?:[2-8]|9[0-9])[0-9]{3}-[0-9]{4}$/, {
+        message: messages.invalidPhone,
+      }),
+    email: z
+      .string({ required_error: messages.required })
+      .regex(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/, messages.invalidEmail),
+    message: z.string({ required_error: messages.required }),
+  })
+}
 
-type FormData = z.infer<typeof formSchema>
+type FormData = z.infer<ReturnType<typeof buildSchema>>
 
 export function ContactForm() {
+  const t = useTranslations('contact.form')
   const [phase, setPhase] = useState(0)
   const [state, submitToForm] = formSpree.useForm('xkgnnpwy')
-  const form = useForm<FormData>({ resolver: zodResolver(formSchema) })
+
+  const schema = useMemo(
+    () =>
+      buildSchema({
+        required: t('errors.required'),
+        invalidPhone: t('errors.invalidPhone'),
+        invalidEmail: t('errors.invalidEmail'),
+      }),
+    [t],
+  )
+  const form = useForm<FormData>({ resolver: zodResolver(schema) })
   const {
     handleSubmit,
     watch,
@@ -59,9 +74,7 @@ export function ContactForm() {
   const message = watch('message')
 
   async function handleSubmitData(data: FormData) {
-    submitToForm(data).catch(() =>
-      toast.error('Não foi possível enviar os dados do formulário'),
-    )
+    submitToForm(data).catch(() => toast.error(t('errors.submitFailed')))
   }
 
   useEffect(() => {
@@ -69,68 +82,50 @@ export function ContactForm() {
       setPhase(1)
     }
     if (state.errors) {
-      toast.error('Não foi possível enviar os dados do formulário')
+      toast.error(t('errors.submitFailed'))
     }
-  }, [state])
+  }, [state, t])
 
   return (
     <DialogContent className="max-w-4xl pt-8">
       <motion.div
-        initial={{
-          right: '50%',
-        }}
-        animate={{
-          right: phase === 1 ? 0 : '50%',
-        }}
-        transition={{
-          duration: 0.8,
-        }}
+        initial={{ right: '50%' }}
+        animate={{ right: phase === 1 ? 0 : '50%' }}
+        transition={{ duration: 0.8 }}
         className="absolute left-0 top-0 bg-gradient-to-r from-primary-green to-primary-blue h-1"
       />
 
       {phase === 1 && (
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 100,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.5,
-          }}
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           className="absolute left-0 right-0 top-0 bottom-0 flex flex-col items-center justify-center gap-4"
         >
           <CheckCircle size={48} className="text-primary-green" />
-          <h1 className="text-h4">Tudo Certo</h1>
-          <span>Você já pode fechar essa tela</span>
+          <h1 className="text-h4">{t('doneTitle')}</h1>
+          <span>{t('doneSubtitle')}</span>
         </motion.div>
       )}
       <FormProvider {...form}>
         {phase === 0 ? (
           <DialogHeader>
-            <DialogTitle>Pedido para trabalhar com João Rocha</DialogTitle>
-            <DialogDescription>
-              João receberá sua mensagem e entrará em contato
-            </DialogDescription>
+            <DialogTitle>{t('title')}</DialogTitle>
+            <DialogDescription>{t('description')}</DialogDescription>
           </DialogHeader>
         ) : (
           <DialogHeader>
-            <DialogTitle>Mensagem enviada com sucesso</DialogTitle>
-            <DialogDescription>
-              Em breve João lerá sua mensagem e entrará em contato
-            </DialogDescription>
+            <DialogTitle>{t('successTitle')}</DialogTitle>
+            <DialogDescription>{t('successDescription')}</DialogDescription>
           </DialogHeader>
         )}
         <div
           className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${phase === 1 && 'invisible'}`}
         >
           <div className="flex flex-col gap-3">
-            <Label htmlFor="name">Nome</Label>
+            <Label htmlFor="name">{t('name')}</Label>
             <Input
-              placeholder="Escreva seu nome..."
+              placeholder={t('namePlaceholder')}
               autoFocus
               {...register('name')}
             />
@@ -141,7 +136,7 @@ export function ContactForm() {
             )}
           </div>
           <div className="flex flex-col gap-3">
-            <Label htmlFor="cellphone">Celular</Label>
+            <Label htmlFor="cellphone">{t('cellphone')}</Label>
             <Input
               placeholder="(11) 99999-8888"
               {...register('cellphone')}
@@ -158,8 +153,8 @@ export function ContactForm() {
             )}
           </div>
           <div className="flex flex-col gap-3 md:col-span-2">
-            <Label htmlFor="email">E-mail</Label>
-            <Input placeholder="seuemail@exemplo.com" {...register('email')} />
+            <Label htmlFor="email">{t('email')}</Label>
+            <Input placeholder={t('emailPlaceholder')} {...register('email')} />
             {errors.email && (
               <span className="text-xs opacity-80 text-red-300">
                 {errors.email.message}
@@ -167,10 +162,10 @@ export function ContactForm() {
             )}
           </div>
           <div className="flex flex-col gap-3 md:col-span-2">
-            <Label htmlFor="name">Mensagem</Label>
+            <Label htmlFor="name">{t('message')}</Label>
             <Textarea
               rows={5}
-              placeholder="Olá João! Estou entrando em contato..."
+              placeholder={t('messagePlaceholder')}
               {...register('message')}
             />
             {errors.message && (
@@ -188,7 +183,7 @@ export function ContactForm() {
                   className="w-full h-12 text-sm text-center rounded-none focus:outline-none"
                   variant="outline"
                 >
-                  Cancelar
+                  {t('cancel')}
                 </Button>
               </DialogClose>
               <Button
@@ -199,7 +194,7 @@ export function ContactForm() {
                   !name || !cellphone || !email || !message || state.submitting
                 }
               >
-                Próximo
+                {t('next')}
               </Button>
             </div>
           </DialogFooter>
@@ -207,7 +202,7 @@ export function ContactForm() {
           <DialogFooter>
             <DialogClose asChild>
               <Button variant="secondary" className="z-10">
-                Fechar
+                {t('close')}
               </Button>
             </DialogClose>
           </DialogFooter>
