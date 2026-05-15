@@ -1,9 +1,8 @@
-import { routing } from '@/i18n/routing'
+import { routing } from '@/lib/i18n/routing'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Inter } from 'next/font/google'
 import { notFound } from 'next/navigation'
-import { Toaster } from 'sonner'
 import '../globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -41,8 +40,9 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
-        <Toaster richColors />
+        <NextIntlClientProvider>
+          <div className="w-full max-w-6xl mx-auto p-4 pt-48">{children}</div>
+        </NextIntlClientProvider>
       </body>
     </html>
   )
