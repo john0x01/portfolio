@@ -41,7 +41,7 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={inter.className}>
         <NextIntlClientProvider>
-          <div className="w-full max-w-3xl mx-auto p-4 pt-48">{children}</div>
+          <div className="w-full max-w-4xl mx-auto p-4 pt-48">{children}</div>
         </NextIntlClientProvider>
       </body>
     </html>
